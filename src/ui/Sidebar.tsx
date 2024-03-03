@@ -9,9 +9,12 @@ interface ContainerSideProps {
 }
 
 const ContainerSide = styled.aside<ContainerSideProps>`
+  position: sticky;
+  top: 30px;
+  z-index: 1;
   background-color: red;
-  width: 200px;
-  height: 550px;
+  width: 240px;
+  height: 620px;
   padding: 8px;
   border-radius: 10px;
   border: 2px solid wheat;
@@ -34,10 +37,10 @@ const ContainerSide = styled.aside<ContainerSideProps>`
 `;
 
 const StyledImage = styled.img`
-  width: 130px;
-  height: 130px;
+  width: 150px;
+  height: 150px;
   border-radius: 15px;
-  margin-top: 5px;
+  margin-top: 10px;
 
   @media ${device.lg} {
     width: 70px;
@@ -65,7 +68,6 @@ const StyledTitle = styled.h1`
   font-weight: 700;
   font-size: large;
   margin: 0px;
-  margin: 0px;
 `;
 
 const StyledSubTitle = styled.p`
@@ -76,8 +78,6 @@ const StyledSubTitle = styled.p`
   padding: 5px 50px 5px 50px;
   margin: 0px;
   text-align: center;
-  margin: 0px;
-
   @media ${device.lg} {
     padding: 5px 20px;
   }
@@ -85,7 +85,7 @@ const StyledSubTitle = styled.p`
 
 const Button = styled.button`
   display: none;
-  visibility: none;
+  visibility: hidden;
 
   @media ${device.lg} {
     display: block;
@@ -103,26 +103,43 @@ const Button = styled.button`
 `;
 
 const Separator = styled.div`
-  width: 160px;
+  width: 175px;
   height: 1px;
   background: black;
-  margin: 30px 0px;
+  margin: 32px;
+`;
+
+
+const InfoSection = styled.section`
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  
+  @media ${device.lg}{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    width: 100%;
+    gap: 30px 15px;
+  }
 `;
 
 const ContainerItem = styled.div`
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 15px;
-  width: 150px;
+  min-width: 100%;
+  gap: 16px;
+  
+  
+  @media ${device.lg}{
+    min-width: 100%;
+    width: fit-content;
+    justify-content: flex-start;
+  }
 `;
-const InfoSection = styled.section`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 22px;
-`;
+
 const ItemInfo = styled.div`
   display: flex;
   flex-direction: column;
@@ -133,6 +150,7 @@ const ItemTitle = styled.p`
   font-weight: 600;
   font-size: smaller;
   margin: 0px;
+  text-transform: uppercase;
 `;
 
 const ItemBody = styled.p`
@@ -141,14 +159,15 @@ const ItemBody = styled.p`
   font-weight: 600;
 `;
 const ContainerIconItem = styled.div`
+  position: relative;
   display: flex;
   justify-content: center;
-  place-items: center;
   align-items: center;
   background-color: brown;
   border-radius: 15px;
   height: 45px;
   width: 45px;
+  z-index: 1;
 `;
 
 const LinkedIconZone = styled.div`
@@ -156,7 +175,7 @@ const LinkedIconZone = styled.div`
   gap: 16px;
   justify-content: center;
   align-items: center;
-  margin-top: 30px;
+  padding-bottom: 4px;
 `;
 
 const MobileSideTitle = styled.div`
@@ -180,8 +199,7 @@ const MobileSideTitle = styled.div`
       position: absolute;
       inset: 1px;
       border-radius: inherit;
-      background: var(--bg-gradient-jet);
-      transition: var(--transition-1);
+      
       z-index: -1;
     }
   }
