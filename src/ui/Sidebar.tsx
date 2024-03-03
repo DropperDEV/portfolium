@@ -36,6 +36,7 @@ const StyledSubTitle = styled.p`
   padding: 4px 50px 4.8px 50px;
   text-align: center;
   margin: 0px;
+  animation: glow 1s ease-in-out infinite alternate;
 `;
 
 const ContainerTitle = styled.div`
