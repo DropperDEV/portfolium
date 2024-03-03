@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-
+import { device } from "../utils/breakpoints";
+import { IoSwapVertical } from "react-icons/io5";
 const ContainerSide = styled.aside`
   background-color: red;
   width: 200px;
@@ -13,6 +14,13 @@ const ContainerSide = styled.aside`
   display: flex;
   align-items: center;
   flex-direction: column;
+
+  @media ${device.lg} {
+    width: 900px;
+    height: 180px;
+    align-items: baseline;
+    padding: 4px;
+  }
 `;
 
 const StyledImage = styled.img`
@@ -20,11 +28,33 @@ const StyledImage = styled.img`
   height: 130px;
   border-radius: 15px;
   margin-top: 5px;
+
+  @media ${device.lg} {
+    width: 70px;
+    height: 70px;
+  }
+`;
+
+const ContainerTitle = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 20px;
+  gap: 15px;
+  @media ${device.lg} {
+    display: flex;
+    align-items: unset;
+    margin: 0px;
+    margin-top: 5px;
+  }
 `;
 
 const StyledTitle = styled.h1`
   font-weight: 700;
   font-size: large;
+  margin: 0px;
   margin: 0px;
 `;
 
@@ -33,19 +63,33 @@ const StyledSubTitle = styled.p`
   font-weight: 600;
   font-size: small;
   border-radius: 15px;
-  padding: 4px 50px 4.8px 50px;
+  padding: 5px 50px 5px 50px;
+  margin: 0px;
   text-align: center;
   margin: 0px;
-  animation: glow 1s ease-in-out infinite alternate;
+
+  @media ${device.lg} {
+    padding: 5px 20px;
+  }
 `;
 
-const ContainerTitle = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-top: 20px;
-  gap: 15px;
+const Button = styled.button`
+  display: none;
+  visibility: none;
+
+  @media ${device.lg} {
+    display: block;
+    visibility: visible;
+    position: absolute;
+    top: -30px;
+    right: 20px;
+    border-radius: 0px 10px;
+    color: green;
+    background: yellow;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+    z-index: 1;
+    padding: 5px 12px;
+  }
 `;
 
 const Separator = styled.div`
@@ -105,14 +149,47 @@ const LinkedIconZone = styled.div`
   margin-top: 30px;
 `;
 
+const MobileSideTitle = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+
+  @media ${device.lg} {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: unset;
+    gap: 20px;
+    margin: 25px;
+
+    &:before {
+      content: "";
+      position: absolute;
+      inset: 1px;
+      border-radius: inherit;
+      background: var(--bg-gradient-jet);
+      transition: var(--transition-1);
+      z-index: -1;
+    }
+  }
+`;
+
 function Sidebar() {
   return (
     <ContainerSide>
-      <StyledImage src="/JamesPhoto.png" alt="James Costa" />
-      <ContainerTitle>
-        <StyledTitle>James Costa</StyledTitle>
-        <StyledSubTitle>Hello, world!</StyledSubTitle>
-      </ContainerTitle>
+      <MobileSideTitle>
+        <StyledImage src="/JamesPhoto.png" alt="James Costa" />
+        <ContainerTitle>
+          <StyledTitle>James Costa</StyledTitle>
+          <StyledSubTitle>Hello, world!</StyledSubTitle>
+        </ContainerTitle>
+        <Button>
+          <IoSwapVertical size={25} />
+        </Button>
+      </MobileSideTitle>
       <Separator />
       <InfoSection>
         <ContainerItem>
