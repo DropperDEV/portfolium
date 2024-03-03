@@ -4,11 +4,10 @@ import { device } from "../utils/breakpoints";
 import { IoSwapVertical } from "react-icons/io5";
 import { useState } from "react";
 
-interface ContainerSideProps {
-  active: boolean;
-}
 
-const ContainerSide = styled.aside<ContainerSideProps>`
+
+
+const ContainerSide = styled.aside<{$active: boolean;}>`
   position: sticky;
   top: 30px;
   z-index: 1;
@@ -26,11 +25,10 @@ const ContainerSide = styled.aside<ContainerSideProps>`
 
   @media ${device.lg} {
     width: 900px;
-    height: 180px;
     align-items: baseline;
+    justify-content: normal;
     padding: 4px;
-    //max-height: ${(props) => (props.active ? '405px' : 'auto')};
-    height: 405px;
+    height: ${props => props.$active ? '405px' : 'auto'}
   }
 
   
@@ -102,19 +100,26 @@ const Button = styled.button`
   }
 `;
 
-const Separator = styled.div`
+const Separator = styled.div<{ $visible?: boolean; $active: boolean}>`
   width: 175px;
   height: 1px;
   background: black;
-  margin: 32px;
+  margin: 15px 0px;
+  visibility: ${props => props.$visible ? "visible" : "hidden"};
+
+  @media ${device.lg}{
+    width: 93%;
+    visibility: visible;
+    display: ${props => props.$active ? "block" : "none"};
+  }
 `;
 
 
-const InfoSection = styled.section`
-  display: grid;
+const InfoSection = styled.section<{$active: boolean;}>`
+  display: ${props => props.$active ? "grid" : "none"};
   grid-template-columns: 1fr;
   gap: 30px;
-  
+
   @media ${device.lg}{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -123,16 +128,16 @@ const InfoSection = styled.section`
     grid-row-gap: 0px;
     width: 100%;
     gap: 30px 15px;
+    margin: 15px;
   }
 `;
 
-const ContainerItem = styled.div`
-  display: flex;
+const ContainerItem = styled.div<{$active: boolean;}>`
+  display: ${props => props.$active ? "flex" : "none"};
   align-items: center;
   min-width: 100%;
   gap: 16px;
-  
-  
+
   @media ${device.lg}{
     min-width: 100%;
     width: fit-content;
@@ -140,12 +145,13 @@ const ContainerItem = styled.div`
   }
 `;
 
-const ItemInfo = styled.div`
-  display: flex;
+const ItemInfo = styled.div<{$active: boolean;}>`
+  display: ${props => props.$active ? "flex" : "none"};
   flex-direction: column;
 `;
 
-const ItemTitle = styled.p`
+const ItemTitle = styled.p<{$active: boolean;}>`
+  display: ${props => props.$active ? "flex" : "none"};
   color: #c6a6a6;
   font-weight: 600;
   font-size: smaller;
@@ -153,14 +159,16 @@ const ItemTitle = styled.p`
   text-transform: uppercase;
 `;
 
-const ItemBody = styled.p`
+const ItemBody = styled.p<{$active: boolean;}>`
+  display: ${props => props.$active ? "flex" : "none"};
   font-size: small;
   margin: 0px;
   font-weight: 600;
 `;
-const ContainerIconItem = styled.div`
+const ContainerIconItem = styled.div<{$active: boolean;}>`
+  display: ${props => props.$active ? "flex" : "none"};
+
   position: relative;
-  display: flex;
   justify-content: center;
   align-items: center;
   background-color: brown;
@@ -170,12 +178,17 @@ const ContainerIconItem = styled.div`
   z-index: 1;
 `;
 
-const LinkedIconZone = styled.div`
-  display: flex;
+const LinkedIconZone = styled.div<{$active: boolean;}>`
+  display: ${props => props.$active ? "flex" : "none"};
   gap: 16px;
   justify-content: center;
   align-items: center;
   padding-bottom: 4px;
+  
+  @media ${device.lg}{
+    margin-top: 8px;
+    width: 100%;
+  }
 `;
 
 const MobileSideTitle = styled.div`
@@ -209,49 +222,50 @@ function Sidebar() {
   const [active, setActive] = useState<boolean>(false);
 
   return (
-    <ContainerSide active={active}>
+    <ContainerSide $active={active}>
       <MobileSideTitle>
-        <StyledImage src="/JamesPhoto.png" alt="James Costa" />
-        <ContainerTitle>
+        <StyledImage src="/JamesPhoto.png" alt="James Costa"  />
+        <ContainerTitle >
           <StyledTitle>James Costa</StyledTitle>
-          <StyledSubTitle>Hello, world!</StyledSubTitle>
+          <StyledSubTitle>Hello, World!</StyledSubTitle>
         </ContainerTitle>
-        <Button onClick={() => setActive(!active)}>
+            <Button onClick={() => setActive(!active)}>
           <IoSwapVertical size={25} />
         </Button>
       </MobileSideTitle>
-      <Separator />
-      <InfoSection>
-        <ContainerItem>
-          <ContainerIconItem>
+      <Separator $visible={true} $active={active} />
+      <InfoSection $active={active}>
+        <ContainerItem $active={active}>
+          <ContainerIconItem $active={active}>
             {" "}
             <img src="/icon/IconYear.svg" alt="Anos" />
           </ContainerIconItem>
-          <ItemInfo>
-            <ItemTitle>Idade</ItemTitle>
-            <ItemBody>18 anos de idade</ItemBody>
+          <ItemInfo $active={active}>
+            <ItemTitle $active={active}>Idade</ItemTitle >
+            <ItemBody $active={active}>18 anos de idade</ItemBody>
           </ItemInfo>
         </ContainerItem>
-        <ContainerItem>
-          <ContainerIconItem>
+        <ContainerItem $active={active}>
+          <ContainerIconItem $active={active}>
             <img src="/icon/IconLocation.svg" alt="Localização" />
           </ContainerIconItem>
-          <ItemInfo>
-            <ItemTitle>Localização</ItemTitle>
-            <ItemBody>Fortaleza, Brasil</ItemBody>
+          <ItemInfo $active={active}>
+            <ItemTitle $active={active}>Localização</ItemTitle>
+            <ItemBody $active={active}>Fortaleza, Brasil</ItemBody>
           </ItemInfo>
         </ContainerItem>
-        <ContainerItem>
-          <ContainerIconItem>
+        <ContainerItem $active={active}>
+          <ContainerIconItem $active={active}>
             <img src="/icon/IconPerson.svg" alt="Personalidade" />
           </ContainerIconItem>
-          <ItemInfo>
-            <ItemTitle>Personalidade</ItemTitle>
-            <ItemBody>INTP-T</ItemBody>
+          <ItemInfo $active={active}>
+            <ItemTitle $active={active}>Personalidade</ItemTitle>
+            <ItemBody $active={active}>INTP-T</ItemBody>
           </ItemInfo>
         </ContainerItem>
       </InfoSection>
-      <LinkedIconZone>
+      <Separator $visible={false} $active={active} />
+      <LinkedIconZone $active={active}>
         <a
           href="https://www.linkedin.com/in/james-soares-costa/"
           target="_blank"
