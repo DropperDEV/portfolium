@@ -2,7 +2,13 @@ import styled from "styled-components";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { device } from "../utils/breakpoints";
 import { IoSwapVertical } from "react-icons/io5";
-const ContainerSide = styled.aside`
+import { useState } from "react";
+
+interface ContainerSideProps {
+  active: boolean;
+}
+
+const ContainerSide = styled.aside<ContainerSideProps>`
   background-color: red;
   width: 200px;
   height: 550px;
@@ -20,7 +26,11 @@ const ContainerSide = styled.aside`
     height: 180px;
     align-items: baseline;
     padding: 4px;
+    //max-height: ${(props) => (props.active ? '405px' : 'auto')};
+    height: 405px;
   }
+
+  
 `;
 
 const StyledImage = styled.img`
@@ -178,15 +188,17 @@ const MobileSideTitle = styled.div`
 `;
 
 function Sidebar() {
+  const [active, setActive] = useState<boolean>(false);
+
   return (
-    <ContainerSide>
+    <ContainerSide active={active}>
       <MobileSideTitle>
         <StyledImage src="/JamesPhoto.png" alt="James Costa" />
         <ContainerTitle>
           <StyledTitle>James Costa</StyledTitle>
           <StyledSubTitle>Hello, world!</StyledSubTitle>
         </ContainerTitle>
-        <Button>
+        <Button onClick={() => setActive(!active)}>
           <IoSwapVertical size={25} />
         </Button>
       </MobileSideTitle>
