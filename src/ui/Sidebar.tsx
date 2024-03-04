@@ -13,16 +13,14 @@ const ContainerSide = styled.aside<{$active: boolean;}>`
   z-index: 1;
   background-color: red;
   width: 240px;
-  height: 620px;
+  max-height:180px;
   padding: 8px;
   border-radius: 10px;
   border: 2px solid wheat;
   margin-top: 10px;
 
   overflow: hidden;
-  transition: 0.5s ease-in-out;
-  
-
+  transition: 0.8s ease-in-out;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -33,12 +31,13 @@ const ContainerSide = styled.aside<{$active: boolean;}>`
     justify-content: normal;
     position: relative;
     padding: 4px;
-    height: ${props => props.$active ? '405px' : 'auto'}
-    
+    max-height: ${props => props.$active ? '405px' : 'auto'}
     
   }
-
   
+  @media (min-width: 1280px){
+    max-height: 620px;
+  }
 `;
 
 const StyledImage = styled.img`
@@ -64,8 +63,7 @@ const ContainerTitle = styled.div`
   @media ${device.lg} {
     display: flex;
     align-items: unset;
-    margin: 0px;
-    margin-top: 5px;
+    margin: 5px 0px 0px;
   }
 `;
 
@@ -87,42 +85,36 @@ const StyledSubTitle = styled.p`
   @media ${device.lg} {
     padding: 5px 20px;
   }
-
-  
-
-
-@keyframes glow {
-  from {
-    box-shadow: 0 0 0.5px #fff, 0 0 1px #fff, 0 0 2px #fff,
-    0 0 4px hsla(45, 100%, 90%, 0.5), 0 0 7px hsla(45, 100%, 90%, 0.5),
-    0 0 10px hsla(45, 100%, 90%, 0.5), 0 0 12px hsla(45, 100%, 90%, 0.5),
-    0 0 15px hsla(45, 100%, 90%, 0.5);
+  @keyframes glow {
+    from {
+      box-shadow: 0 0 1px #fff, 0 0 1px #fff, 0 0 2px #fff,
+      0 0 4px hsla(45, 100%, 90%, 0.5), 0 0 7px hsla(45, 100%, 90%, 0.5),
+      0 0 10px hsla(45, 100%, 90%, 0.5), 0 0 12px hsla(45, 100%, 90%, 0.5),
+      0 0 15px hsla(45, 100%, 90%, 0.5);
+    }
+    to {
+      box-shadow: 0 0 3px #ffffff0e;
+    }
   }
-  to {
-    box-shadow: 0 0 2.5px #ffffff0e;
-  }
-}
 `;
-
 const Button = styled.button`
   display: none;
   visibility: hidden;
   transition: 0.25s ease;
-  
+
+  &:hover,
+  &:focus {
+    background: greenyellow;
+  }
 
   &:before {
     content: "";
     position: absolute;
     inset: 1px;
     border-radius: inherit;
-    background: deeppink;
-    transition: orange;
+    background: deepskyblue;
+    transition: 0.25s ease;
     z-index: -1;
-  }
-
-  &:hover,
-  &:focus {
-    background: greenyellow;
   }
 
   &:hover::before,
@@ -141,17 +133,16 @@ const Button = styled.button`
     background: yellow;
     transition: 0.25s ease;
     z-index: 1;
-    padding: 5px 12px;
-    padding-top: 8px;
+    padding: 8px 12px 5px;
   }
 `;
-
 const Separator = styled.div<{ $visible?: boolean; $active: boolean}>`
   width: 175px;
   height: 1px;
   background: black;
   margin: 15px 0px;
   visibility: ${props => props.$visible ? "visible" : "hidden"};
+  
 
   @media ${device.lg}{
     width: 93%;
@@ -159,16 +150,14 @@ const Separator = styled.div<{ $visible?: boolean; $active: boolean}>`
     display: ${props => props.$active ? "block" : "none"};
   }
 `;
-
-
 const InfoSection = styled.section<{$active: boolean;}>`
-  display: ${props => props.$active ? "grid" : "none"};
+  display: grid;
   grid-template-columns: 1fr;
   gap: 30px;
   transition: 0.5s ease-in-out;
-
+  
   @media ${device.lg}{
-    display: grid;
+    display: ${props => props.$active ? "grid" : "none"};
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
     grid-column-gap: 0px;
@@ -180,12 +169,14 @@ const InfoSection = styled.section<{$active: boolean;}>`
 `;
 
 const ContainerItem = styled.div<{$active: boolean;}>`
-  display: ${props => props.$active ? "flex" : "none"};
+  display: flex;
   align-items: center;
   min-width: 100%;
   gap: 16px;
+  transition: 0.5s ease-in-out;
 
   @media ${device.lg}{
+    display: ${props => props.$active ? "flex" : "none"};
     min-width: 100%;
     width: fit-content;
     justify-content: flex-start;
@@ -193,27 +184,43 @@ const ContainerItem = styled.div<{$active: boolean;}>`
 `;
 
 const ItemInfo = styled.div<{$active: boolean;}>`
-  display: ${props => props.$active ? "flex" : "none"};
+  display: flex;
   flex-direction: column;
+  transition: 0.5s ease-in-out;
+  
+  @media ${device.lg}{
+    display: ${props => props.$active ? "flex" : "none"};
+
+  }
 `;
 
 const ItemTitle = styled.p<{$active: boolean;}>`
-  display: ${props => props.$active ? "flex" : "none"};
   color: #c6a6a6;
   font-weight: 600;
   font-size: smaller;
   margin: 0px;
   text-transform: uppercase;
+  transition: 0.5s ease-in-out;
+
+  @media ${device.lg}{
+    display: ${props => props.$active ? "flex" : "none"};
+
+  }
 `;
 
 const ItemBody = styled.p<{$active: boolean;}>`
-  display: ${props => props.$active ? "flex" : "none"};
   font-size: small;
   margin: 0px;
   font-weight: 600;
+  transition: 0.5s ease-in-out;
+
+  @media ${device.lg}{
+    display: ${props => props.$active ? "flex" : "none"};
+
+  }
 `;
 const ContainerIconItem = styled.div<{$active: boolean;}>`
-  display: ${props => props.$active ? "flex" : "none"};
+  display: flex;
 
   position: relative;
   justify-content: center;
@@ -223,16 +230,24 @@ const ContainerIconItem = styled.div<{$active: boolean;}>`
   height: 45px;
   width: 45px;
   z-index: 1;
+  transition: 0.5s ease-in-out;
+
+  @media ${device.lg}{
+    display: ${props => props.$active ? "flex" : "none"};
+
+  }
 `;
 
 const LinkedIconZone = styled.div<{$active: boolean;}>`
-  display: ${props => props.$active ? "flex" : "none"};
+  display: flex;
   gap: 16px;
   justify-content: center;
   align-items: center;
   padding-bottom: 4px;
+  transition: 0.5s ease-in-out;
   
   @media ${device.lg}{
+    display: ${props => props.$active ? "flex" : "none"};
     margin-top: 8px;
     width: 100%;
   }
@@ -249,6 +264,7 @@ const MobileSideTitle = styled.div`
   align-items: center;
   justify-content: flex-start;
   width: 100%;
+  transition: 0.5s ease-in-out;
 
   @media ${device.lg} {
     display: flex;
