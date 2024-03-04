@@ -20,7 +20,7 @@ const ContainerSide = styled.aside<{$active: boolean;}>`
   margin-top: 10px;
 
   overflow: hidden;
-  transition: 0.8s ease-in-out;
+  transition: 0.5s ease-in-out;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -31,12 +31,13 @@ const ContainerSide = styled.aside<{$active: boolean;}>`
     justify-content: normal;
     position: relative;
     padding: 4px;
-    max-height: ${props => props.$active ? '405px' : 'auto'}
+    max-height: ${props => props.$active ? '450px' : 'auto'}
     
   }
   
   @media (min-width: 1280px){
-    max-height: 620px;
+    max-height: 600px;
+    gap: 10px;
   }
 `;
 
@@ -142,12 +143,13 @@ const Separator = styled.div<{ $visible?: boolean; $active: boolean}>`
   background: black;
   margin: 25px 0px;
   visibility: ${props => props.$visible ? "visible" : "hidden"};
-  
+  display: ${props => props.$visible ? "block" : "none"};
 
   @media ${device.lg}{
     width: 93%;
     visibility: visible;
     display: ${props => props.$active ? "block" : "none"};
+    margin: 20px 0px;
   }
 `;
 const InfoSection = styled.section<{$active: boolean;}>`
@@ -243,18 +245,20 @@ const LinkedIconZone = styled.div<{$active: boolean;}>`
   gap: 16px;
   justify-content: center;
   align-items: center;
-  padding-bottom: 4px;
   transition: 0.5s ease-in-out;
+  padding: 10px;
   
   @media ${device.lg}{
     display: ${props => props.$active ? "flex" : "none"};
-    margin-top: 8px;
+    padding-bottom: 18px;
     width: 100%;
   }
   
   a:hover{
     color: #747bff;
   }
+  
+  
 `;
 
 const MobileSideTitle = styled.div`
@@ -337,10 +341,10 @@ function Sidebar() {
           href="https://www.linkedin.com/in/james-soares-costa/"
           target="_blank"
         >
-          <FaLinkedin  />
+          <FaLinkedin size={17}  />
         </a>
         <a href="https://github.com/DropperDEV" target="_blank">
-          <FaGithub  />
+          <FaGithub  size={17} />
         </a>
       </LinkedIconZone>
     </ContainerSide>
