@@ -19,6 +19,10 @@ const ContainerSide = styled.aside<{$active: boolean;}>`
   border: 2px solid wheat;
   margin-top: 10px;
 
+  overflow: hidden;
+  transition: 0.5s ease-in-out;
+  
+
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -76,14 +80,52 @@ const StyledSubTitle = styled.p`
   padding: 5px 50px 5px 50px;
   margin: 0px;
   text-align: center;
+  animation: glow 5s ease-in-out infinite alternate;
   @media ${device.lg} {
     padding: 5px 20px;
   }
+
+  
+
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 0.5px #fff, 0 0 1px #fff, 0 0 2px #fff,
+    0 0 4px hsla(45, 100%, 90%, 0.5), 0 0 7px hsla(45, 100%, 90%, 0.5),
+    0 0 10px hsla(45, 100%, 90%, 0.5), 0 0 12px hsla(45, 100%, 90%, 0.5),
+    0 0 15px hsla(45, 100%, 90%, 0.5);
+  }
+  to {
+    box-shadow: 0 0 2.5px #ffffff0e;
+  }
+}
 `;
 
 const Button = styled.button`
   display: none;
   visibility: hidden;
+  transition: 0.25s ease;
+  
+
+  &:before {
+    content: "";
+    position: absolute;
+    inset: 1px;
+    border-radius: inherit;
+    background: deeppink;
+    transition: orange;
+    z-index: -1;
+  }
+
+  &:hover,
+  &:focus {
+    background: greenyellow;
+  }
+
+  &:hover::before,
+  &:focus::before {
+    background: purple;
+  }
 
   @media ${device.lg} {
     display: block;
@@ -94,9 +136,10 @@ const Button = styled.button`
     border-radius: 0px 10px;
     color: green;
     background: yellow;
-    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: 0.25s ease;
     z-index: 1;
     padding: 5px 12px;
+    padding-top: 8px;
   }
 `;
 
