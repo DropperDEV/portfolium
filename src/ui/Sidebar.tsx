@@ -140,7 +140,7 @@ const Separator = styled.div<{ $visible?: boolean; $active: boolean}>`
   width: 175px;
   height: 1px;
   background: black;
-  margin: 15px 0px;
+  margin: 25px 0px;
   visibility: ${props => props.$visible ? "visible" : "hidden"};
   
 
