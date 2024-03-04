@@ -31,8 +31,11 @@ const ContainerSide = styled.aside<{$active: boolean;}>`
     width: 900px;
     align-items: baseline;
     justify-content: normal;
+    position: relative;
     padding: 4px;
     height: ${props => props.$active ? '405px' : 'auto'}
+    
+    
   }
 
   
@@ -162,6 +165,7 @@ const InfoSection = styled.section<{$active: boolean;}>`
   display: ${props => props.$active ? "grid" : "none"};
   grid-template-columns: 1fr;
   gap: 30px;
+  transition: 0.5s ease-in-out;
 
   @media ${device.lg}{
     display: grid;
@@ -231,6 +235,10 @@ const LinkedIconZone = styled.div<{$active: boolean;}>`
   @media ${device.lg}{
     margin-top: 8px;
     width: 100%;
+  }
+  
+  a:hover{
+    color: #747bff;
   }
 `;
 
@@ -313,10 +321,10 @@ function Sidebar() {
           href="https://www.linkedin.com/in/james-soares-costa/"
           target="_blank"
         >
-          <FaLinkedin color="yellow" />
+          <FaLinkedin  />
         </a>
         <a href="https://github.com/DropperDEV" target="_blank">
-          <FaGithub color="yellow" />
+          <FaGithub  />
         </a>
       </LinkedIconZone>
     </ContainerSide>
