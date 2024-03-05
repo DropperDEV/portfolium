@@ -190,6 +190,7 @@ const ItemInfo = styled.div<{$active: boolean;}>`
   display: flex;
   flex-direction: column;
   transition: 0.5s ease-in-out;
+  gap: 5px;
   
   @media ${device.lg}{
     display: ${props => props.$active ? "flex" : "none"};
@@ -198,7 +199,7 @@ const ItemInfo = styled.div<{$active: boolean;}>`
 `;
 
 const ItemTitle = styled.p<{$active: boolean;}>`
-  color: #c6a6a6;
+  color: hsla(0, 0%, 84%, 0.7);
   font-weight: 600;
   font-size: smaller;
   margin: 0px;
@@ -238,6 +239,10 @@ const ContainerIconItem = styled.div<{$active: boolean;}>`
   @media ${device.lg} {
     display: ${props => props.$active ? "flex" : "none"};
 
+  }
+
+  .icon-info {
+    color: hsl(25, 92%, 50%);
   }
 `;
 
@@ -314,16 +319,16 @@ function Sidebar() {
         <ContainerItem $active={active}>
           <ContainerIconItem $active={active}>
             {" "}
-            <MdCake size={20}/>
+            <MdCake size={20} className={"icon-info"}/>
           </ContainerIconItem>
           <ItemInfo $active={active}>
             <ItemTitle $active={active}>Idade</ItemTitle >
             <ItemBody $active={active}>18 anos de idade</ItemBody>
           </ItemInfo>
         </ContainerItem>
-        <ContainerItem $active={active}>
+        <ContainerItem $active={active} >
           <ContainerIconItem $active={active}>
-            <IoLocationSharp size={20}/>
+            <IoLocationSharp size={20} className={"icon-info"}/>
           </ContainerIconItem>
           <ItemInfo $active={active}>
             <ItemTitle $active={active}>Localização</ItemTitle>
@@ -332,7 +337,7 @@ function Sidebar() {
         </ContainerItem>
         <ContainerItem $active={active}>
           <ContainerIconItem $active={active}>
-            <IoPersonSharp size={20}/>
+            <IoPersonSharp size={20} className={"icon-info"}/>
           </ContainerIconItem>
           <ItemInfo $active={active}>
             <ItemTitle $active={active}>Personalidade</ItemTitle>
