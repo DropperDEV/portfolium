@@ -105,7 +105,11 @@ const Button = styled.button`
 
   &:hover,
   &:focus {
-    background: greenyellow;
+    background: linear-gradient(
+        to bottom right,
+        hsl(20, 100%, 41%) 0%,
+        hsla(36, 100%, 69%, 0) 50%
+    );
   }
 
   &:before {
@@ -113,14 +117,18 @@ const Button = styled.button`
     position: absolute;
     inset: 1px;
     border-radius: inherit;
-    background: deepskyblue;
+    background: hsla(240, 2%, 12%, 0.418);
     transition: 0.25s ease;
     z-index: -1;
   }
 
   &:hover::before,
   &:focus::before {
-    background: purple;
+    background: linear-gradient(
+        to bottom right,
+        hsl(24, 92%, 58%) 0%,
+        hsla(36, 100%, 69%, 0) 50%
+    );
   }
 
   @media ${device.lg} {
@@ -130,8 +138,12 @@ const Button = styled.button`
     top: -30px;
     right: 20px;
     border-radius: 0px 10px;
-    color: green;
-    background: yellow;
+    color: #eaeeea;
+    background: linear-gradient(
+        to bottom right,
+        hsla(0, 0%, 25%, 0.452) 0%,
+        hsla(0, 0%, 25%, 0) 50%
+    );;
     transition: 0.25s ease;
     z-index: 1;
     padding: 8px 12px 5px;
