@@ -2,8 +2,10 @@ import styled from "styled-components";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { device } from "../utils/breakpoints";
 import { IoSwapVertical } from "react-icons/io5";
+import { IoLocationSharp } from "react-icons/io5";
+import { MdCake } from "react-icons/md";
 import { useState } from "react";
-
+import { IoPersonSharp } from "react-icons/io5";
 
 
 
@@ -11,13 +13,14 @@ const ContainerSide = styled.aside<{$active: boolean;}>`
   position: sticky;
   top: 30px;
   z-index: 1;
-  background-color: red;
+  background-color: hsla(240, 2%, 12%, 0.418);
   width: 240px;
   max-height:180px;
   padding: 8px;
   border-radius: 10px;
-  border: 2px solid wheat;
+  border: 1px solid hsl(0, 0%, 22%);
   margin-top: 10px;
+  box-shadow: -4px 8px 24px hsla(0, 0%, 0%, 0.25);
 
   overflow: hidden;
   transition: 0.5s ease-in-out;
@@ -72,8 +75,8 @@ const StyledTitle = styled.h1`
   font-weight: 700;
   font-size: large;
   margin: 0px;
-`;
-
+  letter-spacing: -0.25px;
+`
 const StyledSubTitle = styled.p`
   background-color: #07037e;
   font-weight: 600;
@@ -176,6 +179,7 @@ const ContainerItem = styled.div<{$active: boolean;}>`
   min-width: 100%;
   gap: 16px;
   transition: 0.5s ease-in-out;
+  
 
   @media ${device.lg}{
     display: ${props => props.$active ? "flex" : "none"};
@@ -223,18 +227,18 @@ const ItemBody = styled.p<{$active: boolean;}>`
 `;
 const ContainerIconItem = styled.div<{$active: boolean;}>`
   display: flex;
-
+  box-shadow: -4px 8px 24px hsla(0, 0%, 0%, 0.25);
   position: relative;
   justify-content: center;
   align-items: center;
-  background-color: brown;
+  background-color: #2f3383;
   border-radius: 15px;
   height: 45px;
   width: 45px;
   z-index: 1;
   transition: 0.5s ease-in-out;
 
-  @media ${device.lg}{
+  @media ${device.lg} {
     display: ${props => props.$active ? "flex" : "none"};
 
   }
@@ -247,18 +251,22 @@ const LinkedIconZone = styled.div<{$active: boolean;}>`
   align-items: center;
   transition: 0.5s ease-in-out;
   padding: 10px;
-  
-  @media ${device.lg}{
+
+  @media ${device.lg} {
     display: ${props => props.$active ? "flex" : "none"};
     padding-bottom: 18px;
     width: 100%;
   }
-  
-  a:hover{
-    color: #747bff;
+
+  .icon {
+    color: #949494;
   }
-  
-  
+
+  .icon:hover {
+    color: #cccccc;
+  }
+
+
 `;
 
 const MobileSideTitle = styled.div`
@@ -309,7 +317,7 @@ function Sidebar() {
         <ContainerItem $active={active}>
           <ContainerIconItem $active={active}>
             {" "}
-            <img src="/icon/IconYear.svg" alt="Anos" />
+            <MdCake size={20}/>
           </ContainerIconItem>
           <ItemInfo $active={active}>
             <ItemTitle $active={active}>Idade</ItemTitle >
@@ -318,7 +326,7 @@ function Sidebar() {
         </ContainerItem>
         <ContainerItem $active={active}>
           <ContainerIconItem $active={active}>
-            <img src="/icon/IconLocation.svg" alt="Localização" />
+            <IoLocationSharp size={20}/>
           </ContainerIconItem>
           <ItemInfo $active={active}>
             <ItemTitle $active={active}>Localização</ItemTitle>
@@ -327,7 +335,7 @@ function Sidebar() {
         </ContainerItem>
         <ContainerItem $active={active}>
           <ContainerIconItem $active={active}>
-            <img src="/icon/IconPerson.svg" alt="Personalidade" />
+            <IoPersonSharp size={20}/>
           </ContainerIconItem>
           <ItemInfo $active={active}>
             <ItemTitle $active={active}>Personalidade</ItemTitle>
@@ -341,10 +349,10 @@ function Sidebar() {
           href="https://www.linkedin.com/in/james-soares-costa/"
           target="_blank"
         >
-          <FaLinkedin size={17}  />
+          <FaLinkedin size={18}  className={"icon"}  />
         </a>
         <a href="https://github.com/DropperDEV" target="_blank">
-          <FaGithub  size={17} />
+          <FaGithub  size={18}  className={"icon"}/>
         </a>
       </LinkedIconZone>
     </ContainerSide>

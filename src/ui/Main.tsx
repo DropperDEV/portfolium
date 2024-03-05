@@ -1,12 +1,13 @@
 import styled from "styled-components";
 
 const ContainerMain = styled.main`
-  background-color: green;
   width: 900px;
-  height: 94vh;
+  height: 4000px;
   border-radius: 10px;
-  border: 1.5px solid black;
+  border: 1px solid hsl(0, 0%, 22%);
   margin-top: 5px;
+  box-shadow: -4px 8px 24px hsla(0, 0%, 0%, 0.25);
+  background-color: hsla(240, 2%, 12%, 0.418);
 `;
 
 function Main() {
