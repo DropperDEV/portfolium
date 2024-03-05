@@ -78,7 +78,7 @@ const StyledTitle = styled.h1`
   letter-spacing: -0.25px;
 `
 const StyledSubTitle = styled.p`
-  background-color: #07037e;
+  background-color: hsla(240, 2%, 12%, 0.418);
   font-weight: 600;
   font-size: small;
   border-radius: 15px;
@@ -91,10 +91,7 @@ const StyledSubTitle = styled.p`
   }
   @keyframes glow {
     from {
-      box-shadow: 0 0 1px #fff, 0 0 1px #fff, 0 0 2px #fff,
-      0 0 4px hsla(45, 100%, 90%, 0.5), 0 0 7px hsla(45, 100%, 90%, 0.5),
-      0 0 10px hsla(45, 100%, 90%, 0.5), 0 0 12px hsla(45, 100%, 90%, 0.5),
-      0 0 15px hsla(45, 100%, 90%, 0.5);
+      box-shadow: 0 0 15px hsla(240, 0%, 41%, 0.5), 0 0 15px hsla(0, 17%, 98%, 0.5), 0 0 15px hsla(0, 0%, 37%, 0.5);
     }
     to {
       box-shadow: 0 0 3px #ffffff0e;
