@@ -32,15 +32,17 @@ body {
   #root{
   display: flex;
     gap: 3rem;
-  justify-content: center;
+    width: 100%;
+    justify-content: center;
 
-
-}
+  }
 
 @media (max-width: 1280px) {
   #root {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 }
 }

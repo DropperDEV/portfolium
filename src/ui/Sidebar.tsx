@@ -15,13 +15,12 @@ const ContainerSide = styled.aside<{$active: boolean;}>`
   z-index: 1;
   background-color: hsla(240, 2%, 12%, 0.418);
   width: 240px;
-  max-height:180px;
-  padding: 8px;
   border-radius: 10px;
   border: 1px solid hsl(0, 0%, 22%);
   margin-top: 10px;
   box-shadow: -4px 8px 24px hsla(0, 0%, 0%, 0.25);
-
+  padding: 8px;
+  height: 30%;
   overflow: hidden;
   transition: 0.5s ease-in-out;
   display: flex;
@@ -29,19 +28,16 @@ const ContainerSide = styled.aside<{$active: boolean;}>`
   flex-direction: column;
 
   @media ${device.lg} {
-    width: 900px;
+    width: 90%;
     align-items: baseline;
     justify-content: normal;
     position: relative;
     padding: 4px;
-    max-height: ${props => props.$active ? '450px' : 'auto'}
+    max-height: ${props => props.$active ? '500px' : 'auto'}
     
   }
-  
-  @media (min-width: 1280px){
-    max-height: 600px;
     gap: 10px;
-  }
+  
 `;
 
 const StyledImage = styled.img`
@@ -150,7 +146,7 @@ const Button = styled.button`
   }
 `;
 const Separator = styled.div<{ $visible?: boolean; $active: boolean}>`
-  width: 175px;
+  width: 93%;
   height: 1px;
   background: black;
   margin: 25px 0px;
@@ -161,7 +157,7 @@ const Separator = styled.div<{ $visible?: boolean; $active: boolean}>`
     width: 93%;
     visibility: visible;
     display: ${props => props.$active ? "block" : "none"};
-    margin: 20px 0px;
+    margin: 10px 0px;
   }
 `;
 const InfoSection = styled.section<{$active: boolean;}>`
@@ -179,6 +175,11 @@ const InfoSection = styled.section<{$active: boolean;}>`
     width: 100%;
     gap: 30px 15px;
     margin: 15px;
+  }
+  
+  @media ${device.sm}{
+    display: flex;
+    flex-direction: column;
   }
 `;
 
