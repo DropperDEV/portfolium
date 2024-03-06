@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { device } from "../utils/breakpoints";
+import { device } from "../utils/breakpoints.ts";
 import { IoSwapVertical } from "react-icons/io5";
 import { IoLocationSharp } from "react-icons/io5";
 import { MdCake } from "react-icons/md";
