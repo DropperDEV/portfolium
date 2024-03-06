@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import {device} from "../utils/breakpoints.ts";
 import {Link} from "react-router-dom";
+import {colors,device, shadows} from "../utils/StyleVars.ts";
 
 const ContainerMain = styled.main`
   width: 900px;
@@ -8,7 +8,7 @@ const ContainerMain = styled.main`
   border-radius: 10px;
   border: 1px solid hsl(0, 0%, 22%);
   margin-top: 20px;
-  box-shadow: -4px 8px 24px hsla(0, 0%, 0%, 0.25);
+  box-shadow: ${shadows.shadow5};
   background-color: hsla(240, 2%, 12%, 0.418);
   @media ${device.lg} {
     width: 90%;
@@ -32,15 +32,16 @@ const ContainerMain = styled.main`
 `;
 
 const Navigation = styled.nav`
-  position: absolute;
-  bottom: auto;
-  top: 0;
-  left: auto;
-  right: 0;
-  width: max-content;
-  border-radius: 0 20px;
-  padding: 0 10px;
-  box-shadow: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: hsla(240, 1%, 17%, 0.75);
+  backdrop-filter: blur(10px);
+  border: ${colors.jet};
+  border-radius: 12px 12px 0 0;
+  box-shadow: ${shadows.shadow2};
+  z-index: 5;
 
 `
 
