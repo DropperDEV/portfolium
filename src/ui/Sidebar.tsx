@@ -22,21 +22,21 @@ const ContainerSide = styled.aside<{$active: boolean;}>`
   padding: 8px;
   height: 30%;
   overflow: hidden;
-  transition: 0.5s ease-in-out;
   display: flex;
   align-items: center;
   flex-direction: column;
+  gap: 10px;
+  transition: 0.6s ease-in-out;
 
   @media ${device.lg} {
     width: 90%;
+    max-height: 200px;
     align-items: baseline;
     justify-content: normal;
     position: relative;
     padding: 4px;
     max-height: ${props => props.$active ? '500px' : 'auto'}
-    
   }
-    gap: 10px;
   
 `;
 
@@ -45,6 +45,8 @@ const StyledImage = styled.img`
   height: 150px;
   border-radius: 15px;
   margin-top: 10px;
+  transition: 0.5s ease-in-out;
+
 
   @media ${device.lg} {
     width: 70px;
@@ -57,6 +59,8 @@ const ContainerTitle = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  transition: 0.5s ease-in-out;
+
 
   margin-top: 20px;
   gap: 15px;
@@ -72,6 +76,8 @@ const StyledTitle = styled.h1`
   font-size: large;
   margin: 0px;
   letter-spacing: -0.25px;
+  transition: 0.5s ease-in-out;
+
 `
 const StyledSubTitle = styled.p`
   background-color: hsla(240, 2%, 12%, 0.418);
@@ -98,6 +104,7 @@ const Button = styled.button`
   display: none;
   visibility: hidden;
   transition: 0.25s ease;
+
 
   &:hover,
   &:focus {
@@ -152,12 +159,24 @@ const Separator = styled.div<{ $visible?: boolean; $active: boolean}>`
   margin: 25px 0px;
   visibility: ${props => props.$visible ? "visible" : "hidden"};
   display: ${props => props.$visible ? "block" : "none"};
+  transition: 0.5s ease-in-out;
+  animation: fade 0.5s ease backwards;
+
 
   @media ${device.lg}{
     width: 93%;
     visibility: visible;
     display: ${props => props.$active ? "block" : "none"};
     margin: 10px 0px;
+  }
+
+  @keyframes fade {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
   }
 `;
 const InfoSection = styled.section<{$active: boolean;}>`
@@ -189,24 +208,41 @@ const ContainerItem = styled.div<{$active: boolean;}>`
   min-width: 100%;
   gap: 16px;
   transition: 0.5s ease-in-out;
-  
+  animation: fade 0.5s ease backwards;
 
   @media ${device.lg}{
     display: ${props => props.$active ? "flex" : "none"};
+    opacity: ${props => props.$active ? '1' : '0'};
+    pointer-events: ${props => props.$active ? 'auto' : 'none'};
+
     min-width: 100%;
     width: fit-content;
     justify-content: flex-start;
   }
+
+  @keyframes fade {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 `;
+
+
 
 const ItemInfo = styled.div<{$active: boolean;}>`
   display: flex;
   flex-direction: column;
   transition: 0.5s ease-in-out;
+  
   gap: 5px;
   
   @media ${device.lg}{
     display: ${props => props.$active ? "flex" : "none"};
+    opacity: ${props => props.$active ? '1' : '0'};
+
 
   }
 `;
@@ -218,9 +254,11 @@ const ItemTitle = styled.p<{$active: boolean;}>`
   margin: 0px;
   text-transform: uppercase;
   transition: 0.5s ease-in-out;
-
+  
   @media ${device.lg}{
     display: ${props => props.$active ? "flex" : "none"};
+    opacity: ${props => props.$active ? '1' : '0'};
+
 
   }
 `;
@@ -233,6 +271,8 @@ const ItemBody = styled.p<{$active: boolean;}>`
 
   @media ${device.lg}{
     display: ${props => props.$active ? "flex" : "none"};
+    opacity: ${props => props.$active ? '1' : '0'};
+
 
   }
 `;
@@ -266,6 +306,7 @@ const LinkedIconZone = styled.div<{$active: boolean;}>`
   align-items: center;
   transition: 0.5s ease-in-out;
   padding: 10px;
+  animation: fade 0.5s ease backwards;
 
   @media ${device.lg} {
     display: ${props => props.$active ? "flex" : "none"};
@@ -281,6 +322,15 @@ const LinkedIconZone = styled.div<{$active: boolean;}>`
     color: #cccccc;
   }
 
+
+  @keyframes fade {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 
 `;
 
