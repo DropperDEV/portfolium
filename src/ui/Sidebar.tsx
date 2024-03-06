@@ -31,7 +31,7 @@ const ContainerSide = styled.aside<{$active: boolean;}>`
   @media ${device.lg} {
     width: 90%;
     max-height: 200px;
-    align-items: baseline;
+    align-items: center;
     justify-content: normal;
     position: relative;
     padding: 4px;
@@ -139,7 +139,7 @@ const Button = styled.button`
     visibility: visible;
     position: absolute;
     top: -30px;
-    right: 20px;
+    right: -6px;
     border-radius: 0px 10px;
     color: #eaeeea;
     background: linear-gradient(
@@ -153,7 +153,7 @@ const Button = styled.button`
   }
 `;
 const Separator = styled.div<{ $visible?: boolean; $active: boolean}>`
-  width: 93%;
+  width: 88%;
   height: 1px;
   background: black;
   margin: 25px 0px;

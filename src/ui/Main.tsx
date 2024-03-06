@@ -3,7 +3,7 @@ import {device} from "../utils/breakpoints.ts";
 
 const ContainerMain = styled.main`
   width: 900px;
-  height: 800px;
+  height: 1400px;
   border-radius: 10px;
   border: 1px solid hsl(0, 0%, 22%);
   margin-top: 5px;
