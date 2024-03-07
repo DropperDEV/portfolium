@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import {  NavLink } from "react-router-dom";
-import {colors, device, shadows, transitions, typography} from "../utils/StyleVars.ts";
+import {colors, device, shadows, transitions} from "../utils/StyleVars.ts";
 
 const ContainerMain = styled.main`
   width: 900px;
@@ -40,7 +40,7 @@ const Navigation = styled.nav`
   box-shadow: ${shadows.shadow2};
   z-index: 5;
   
-  ul{
+  ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -48,13 +48,15 @@ const Navigation = styled.nav`
     padding: 0 10px;
     list-style: none;
   }
-  a{
+  
+  a {
     color: ${colors.lightGray};
-    font-size: ${typography.fs8};
+    font-size: 15px; 
     padding: 20px 7px;
     transition: color ${transitions.transition1};
     text-decoration: none;
   }
+  
   a:hover,
   a:focus {
     color: ${colors.lightGray70};
@@ -63,7 +65,14 @@ const Navigation = styled.nav`
   a.active {
     color: ${colors.orange};
   }
+
+  @media ${device.sm} {
+    a{
+      font-size: 11px; 
+    }
+  }
 `;
+
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error
