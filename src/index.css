@@ -1,3 +1,5 @@
+
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -12,6 +14,10 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+  --orange: hsl(26,100%,47%);
+  --eerieBlack1:hsla(240, 3%, 13%, 0.836);
+  --ffPoppins: '"Poppins", sans-serif';
+  --shaBackground: linear-gradient(360deg, rgba(13, 61, 217, 1) 5%, rgba(12, 45, 246, 1) 100%);
 }
 
 
@@ -24,9 +30,6 @@ body {
   justify-content: center;
   min-width: 320px;
   min-height: 100vh;
-  /*background: rgb(17,73,189);
-  background: linear-gradient(360deg, rgba(17,73,189,1) 19%, rgba(18,81,212,1) 42%, rgba(20,85,218,1) 89%); }**/
-  background: rgb(13, 61, 217);
   background: linear-gradient(360deg, rgba(13, 61, 217, 1) 5%, rgba(12, 45, 246, 1) 100%);
 
   #root{
@@ -54,35 +57,60 @@ body {
 }
 
 
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+img,
+ion-icon,
+a,
+button,
+time,
+span {
+  display: block;
+}
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+  font: inherit;
+  background: none;
+  border: none;
+  text-align: left;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+input,
+textarea {
+  display: block;
+  width: 100%;
+  background: none;
+  font: inherit;
+}
+
+::selection {
+  background: var(--orange);
+  color: var(--eerieBlack1);
+}
+
+:focus {
+  outline-color: var(--orange);
+}
+
+html {
+  font-family: var(--ffPoppins);
+}
+
+body {
+  background: var(--shaBackground);
 }
