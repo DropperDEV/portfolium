@@ -6,7 +6,7 @@ import {
   transitions,
   typography,
 } from "../utils/StyleVars";
-import { NavLink } from "react-router-dom";
+import LinkItem from "../ui/LinkItem";
 
 const StyledNavigation = styled.nav`
   position: absolute;
@@ -79,18 +79,10 @@ export default function Navigation() {
   return (
     <StyledNavigation>
       <ul>
-        <li>
-          <NavLink to={"/"}>Sobre Mim</NavLink>
-        </li>
-        <li>
-          <NavLink to={"/projects"}>Projetos</NavLink>
-        </li>
-        <li>
-          <NavLink to={"/certificates"}>Certificados</NavLink>
-        </li>
-        <li>
-          <NavLink to={"/contact"}>Contato</NavLink>
-        </li>
+        <LinkItem to="/" text="Sobre mim" />
+        <LinkItem to="/projects" text="Projetos" />
+        <LinkItem to="/certificates" text="Certificados" />
+        <LinkItem to="/contact" text="Contato" />
       </ul>
     </StyledNavigation>
   );
