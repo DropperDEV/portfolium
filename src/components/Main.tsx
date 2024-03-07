@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
-import { colors, device, shadows } from "../utils/StyleVars.ts";
+import {  NavLink } from "react-router-dom";
+import {colors, device, shadows, transitions, typography} from "../utils/StyleVars.ts";
 
 const ContainerMain = styled.main`
   width: 900px;
@@ -39,6 +39,30 @@ const Navigation = styled.nav`
   border-radius: 12px 12px 0 0;
   box-shadow: ${shadows.shadow2};
   z-index: 5;
+  
+  ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+    list-style: none;
+  }
+  a{
+    color: ${colors.lightGray};
+    font-size: ${typography.fs8};
+    padding: 20px 7px;
+    transition: color ${transitions.transition1};
+    text-decoration: none;
+  }
+  a:hover,
+  a:focus {
+    color: ${colors.lightGray70};
+  }
+
+  a.active {
+    color: ${colors.orange};
+  }
 `;
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -49,16 +73,16 @@ function Main({ children }) {
         <Navigation>
           <ul>
             <li>
-              <Link to={"/"}>Sobre Mim</Link>
+              <NavLink to={"/"}>Sobre Mim</NavLink>
             </li>
             <li>
-              <Link to={"/"}>Projetos</Link>
+              <NavLink to={"/projects"}>Projetos</NavLink>
             </li>
             <li>
-              <Link to={"/"}>Certificados</Link>
+              <NavLink to={"/certificates"}>Certificados</NavLink>
             </li>
             <li>
-              <Link to={"/"}>Contato</Link>
+              <NavLink to={"/contact"}>Contato</NavLink>
             </li>
           </ul>
         </Navigation>
