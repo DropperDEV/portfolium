@@ -49,7 +49,7 @@ export const colors: Colors = {
   shaBackground: 'linear-gradient(to bottom, #23d3ff 0%, #276aa5 100%)',
   white1: 'hsl(0, 0%, 100%)',
   white2: 'hsl(0, 0%, 98%)',
-  orange: 'hsl(26,100%,47%)',
+  orange: 'hsl(26,100%,50%)',
   blueNavy: 'hsl(228,81%,21%)',
   lightGray: 'hsl(0, 0%, 84%)',
   lightGray70: 'hsla(0, 0%, 84%, 0.7)',
