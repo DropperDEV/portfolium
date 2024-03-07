@@ -1,41 +1,14 @@
 import styled from "styled-components";
-import { NavLink } from "react-router-dom";
 import {
   colors,
   device,
   shadows,
   transitions,
   typography,
-} from "../utils/StyleVars.ts";
+} from "../utils/StyleVars";
+import { NavLink } from "react-router-dom";
 
-const ContainerMain = styled.main`
-  position: relative;
-  width: 900px;
-  height: 1400px;
-  border-radius: 10px;
-  border: 1px solid ${colors.jet};
-  margin-top: 20px;
-  box-shadow: ${shadows.shadow5};
-  background-color: ${colors.eerieBlack2};
-
-  @media ${device.lg} {
-    width: 90%;
-    align-items: baseline;
-    justify-content: normal;
-    position: relative;
-    padding: 4px;
-  }
-
-  @media ${device.md} {
-    width: 90%;
-  }
-
-  @media ${device.sm} {
-    width: 90%;
-  }
-`;
-
-const Navigation = styled.nav`
+const StyledNavigation = styled.nav`
   position: absolute;
   bottom: auto;
   top: 0;
@@ -88,7 +61,7 @@ const Navigation = styled.nav`
     box-shadow: ${shadows.shadow2};
     z-index: 5;
 
-    ul{
+    ul {
       gap: 0;
     }
 
@@ -102,31 +75,23 @@ const Navigation = styled.nav`
     }
   }
 `;
-
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-expect-error
-function Main({ children }) {
+export default function Navigation() {
   return (
-    <ContainerMain>
-      <Navigation>
-        <ul>
-          <li>
-            <NavLink to={"/"}>Sobre Mim</NavLink>
-          </li>
-          <li>
-            <NavLink to={"/projects"}>Projetos</NavLink>
-          </li>
-          <li>
-            <NavLink to={"/certificates"}>Certificados</NavLink>
-          </li>
-          <li>
-            <NavLink to={"/contact"}>Contato</NavLink>
-          </li>
-        </ul>
-      </Navigation>
-      {children}
-    </ContainerMain>
+    <StyledNavigation>
+      <ul>
+        <li>
+          <NavLink to={"/"}>Sobre Mim</NavLink>
+        </li>
+        <li>
+          <NavLink to={"/projects"}>Projetos</NavLink>
+        </li>
+        <li>
+          <NavLink to={"/certificates"}>Certificados</NavLink>
+        </li>
+        <li>
+          <NavLink to={"/contact"}>Contato</NavLink>
+        </li>
+      </ul>
+    </StyledNavigation>
   );
 }
-
-export default Main;
