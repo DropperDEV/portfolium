@@ -15,13 +15,14 @@ const ContainerMain = styled.main`
   margin-top: 20px;
   box-shadow: ${shadows.shadow5};
   background-color: ${colors.eerieBlack2};
+  padding: 30px;
 
   @media ${device.lg} {
     width: 90%;
     align-items: baseline;
     justify-content: normal;
     position: relative;
-    padding: 4px;
+    padding: 30px;
   }
 
   @media ${device.md} {

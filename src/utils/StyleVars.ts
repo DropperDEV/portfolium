@@ -14,11 +14,6 @@ export const gradients: Gradient = {
       hsla(240, 4%, 11%, 0.171) 100%
     ),
     hsla(240, 3%, 13%, 0.123)`,
-  bgGradientYellow1: `linear-gradient(
-    to bottom right,
-    hsl(45, 100%, 71%) 0%,
-    hsla(36, 100%, 69%, 0) 50%
-  )`,
   bgGradientYellow2: `linear-gradient(
       135deg,
       hsla(45, 100%, 71%, 0.251) 0%,

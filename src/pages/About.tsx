@@ -1,7 +1,10 @@
+import TitleMain from "../ui/TitleMain"
 
 function About() {
   return (
-    <div>About</div>
+    <>
+    <TitleMain text="Sobre mim"/>
+    </>
   )
 }
 
