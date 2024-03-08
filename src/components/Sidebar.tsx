@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { device, shadows, transitions, colors } from "../utils/StyleVars.ts";
+import { device, shadows, transitions, colors, typography } from "../utils/StyleVars.ts";
 import { IoSwapVertical } from "react-icons/io5";
 import { IoLocationSharp } from "react-icons/io5";
 import { MdCake } from "react-icons/md";
@@ -253,7 +253,7 @@ const ItemTitle = styled.p<{ $active: boolean }>`
 const ItemBody = styled.p<{ $active: boolean }>`
   font-size: small;
   margin: 0px;
-  font-weight: 600;
+  font-weight: ${typography.fw500};
   transition: 0.5s ease-in-out;
 
   @media ${device.lg} {
