@@ -19,28 +19,28 @@ function About() {
             icon={<TbWorldUpload size={70} />}
             title={"Web designer e desenvolvimento"}
             text={
-              "Creating attractive, easy-to-use websites that work well for businesses and individuals online. "
+              "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex quam uptates, "
             }
           />
           <SectionItem
             icon={<FaMobileScreenButton size={70} />}
             title={"Aplicativos móveis e jogos"}
             text={
-              "Creating and developing engaging mobile apps and games for iOS and Android devices. "
+              "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex quam uptates, "
             }
           />
           <SectionItem
             icon={<TbMathFunction size={70} />}
             title={"Algoritmos e soluções"}
             text={
-              "Utilizing JavaScript frameworks like React, Node, Next, Vue and more to build interactive web applications. "
+              "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex quam uptates, Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex quam uptates. "
             }
           />
           <SectionItem
             icon={<BsDatabaseFillGear size={70} />}
             title={"Banco de dados"}
             text={
-              "Creating attractive, easy-to-use websites that work well for businesses and individuals online. "
+              "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex quam uptates, "
             }
           />
         </TwoColumsSection>
@@ -51,14 +51,14 @@ function About() {
             icon={<TbMathFunction size={70} />}
             title={"Notions com dicas de javascript"}
             text={
-              "Utilizing JavaScript frameworks like React, Node, Next, Vue and more to build interactive web applications. "
+              "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex quam uptates, "
             }
           />
           <SectionItem
             icon={<BsDatabaseFillGear size={70} />}
             title={"Participação em olimpiadas acadêmicas"}
             text={
-              "Creating attractive, easy-to-use websites that work well for businesses and individuals online. "
+              "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex quam uptates, Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex quam uptates. "
             }
           />
         </TwoColumsSection>

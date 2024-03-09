@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { colors, gradients, typography } from "../utils/StyleVars";
+import { colors, device, gradients, typography } from "../utils/StyleVars";
 import React from "react";
 
 interface ISectionItem {
@@ -34,11 +34,18 @@ const StyledItemBody = styled.div`
     font-weight: ${typography.fw300};
     line-height: 1.6;
   }
+  @media ${device.sm}{
+    font-size: ${typography.fs7};
+  }
 `;
 
 const StyledItemTitle = styled.div`
   text-transform: capitalize;
   font-weight: ${typography.fw700};
+
+  @media ${device.sm}{
+    font-size: ${typography.fs5};
+  }
 `;
 function SectionItem({ icon, title, text }: ISectionItem) {
   return (
