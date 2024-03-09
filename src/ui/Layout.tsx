@@ -9,13 +9,13 @@ import Navigation from "../components/Navigation";
 const ContainerMain = styled.main`
   position: relative;
   width: 900px;
-  height: 1400px;
   border-radius: 10px;
   border: 1px solid ${colors.jet};
   margin-top: 20px;
   box-shadow: ${shadows.shadow5};
   background-color: ${colors.eerieBlack2};
   padding: 30px;
+  margin-bottom: 60px;
 
   @media ${device.lg} {
     width: 90%;
@@ -25,13 +25,6 @@ const ContainerMain = styled.main`
     padding: 30px;
   }
 
-  @media ${device.md} {
-    width: 90%;
-  }
-
-  @media ${device.sm} {
-    width: 90%;
-  }
 `;
 function AppLayout() {
   //   const navigation = useNavigation();
