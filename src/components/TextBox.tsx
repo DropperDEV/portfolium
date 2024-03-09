@@ -11,6 +11,7 @@ const StyledTextBox = styled.section<{ $active: boolean }>`
   padding: 30px;
   border-radius: 14px;
   max-height: ${(props) => (props.$active ? "max-content" : "min-content")};
+  margin-bottom: 40px;
 
 
   p:first-child {
