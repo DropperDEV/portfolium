@@ -98,28 +98,28 @@ function About() {
       <Section title={"Meu foco atual"}>
         <TwoColumsSection>
           <SectionItem
-            icon={<TbWorldUpload size={70} />}
+            icon={<TbWorldUpload  />}
             title={"Web designer e desenvolvimento"}
             text={
               "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex quam uptates, "
             }
           />
           <SectionItem
-            icon={<FaMobileScreenButton size={70} />}
+            icon={<FaMobileScreenButton  />}
             title={"Aplicativos móveis e jogos"}
             text={
               "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex quam uptates, "
             }
           />
           <SectionItem
-            icon={<TbMathFunction size={70} />}
+            icon={<TbMathFunction  />}
             title={"Algoritmos e soluções"}
             text={
-              "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex quam uptates, Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex quam uptates. "
+              "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex quam uptates. "
             }
           />
           <SectionItem
-            icon={<BsDatabaseFillGear size={70} />}
+            icon={<BsDatabaseFillGear  />}
             title={"Banco de dados"}
             text={
               "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex quam uptates, "
@@ -130,17 +130,17 @@ function About() {
       <Section title="Profissional com pessoal">
         <TwoColumsSection>
           <SectionItem
-            icon={<TbMathFunction size={70} />}
+            icon={<TbMathFunction  />}
             title={"Notions com dicas de javascript"}
             text={
               "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex quam uptates, "
             }
           />
           <SectionItem
-            icon={<BsDatabaseFillGear size={70} />}
+            icon={<BsDatabaseFillGear  />}
             title={"Participação em olimpiadas acadêmicas"}
             text={
-              "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex quam uptates, Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex quam uptates. "
+              "sit amet consectetur, adipisicing elit. Ex quam uptates. "
             }
           />
         </TwoColumsSection>

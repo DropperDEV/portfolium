@@ -11,22 +11,19 @@ interface ISectionItem {
 const StyledContainerItem = styled.li`
   background: ${gradients.bgGradientJet};
   display: flex;
-  gap: 18px;
-  padding: 30px;
+  gap: 22px;
+  padding: 40px;
   border-radius: 15px;
   justify-content: flex-start;
   align-items: flex-start;
-
-  .icon {
-    margin-bottom: 20px;
+  svg {
+    margin-top: 5px;
+    min-width: 35px;
+    min-height: 35px;
   }
 `;
 
 const StyledItemBody = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin-top: 15px;
 
   p {
     color: ${colors.lightGray};
@@ -34,7 +31,7 @@ const StyledItemBody = styled.div`
     font-weight: ${typography.fw300};
     line-height: 1.6;
   }
-  @media ${device.sm}{
+  @media ${device.sm} {
     font-size: ${typography.fs7};
   }
 `;
@@ -43,7 +40,7 @@ const StyledItemTitle = styled.div`
   text-transform: capitalize;
   font-weight: ${typography.fw700};
 
-  @media ${device.sm}{
+  @media ${device.sm} {
     font-size: ${typography.fs5};
   }
 `;
