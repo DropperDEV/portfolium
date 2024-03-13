@@ -12,31 +12,32 @@ import { colors, device, gradients, typography } from "../utils/StyleVars";
 
 const StyledBigContainer = styled.div`
   background: ${gradients.bgGradientJet};
-  padding: 25px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 1fr;
-  grid-column-gap: 10px;
-  grid-row-gap: 0px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
   border-radius: 15px;
+  padding: 20px;
+  gap: 30px;
 
-  @media ${device.sm} {
+  @media ${device.xs} {
+    display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-row-gap: 20px;
   }
+  
 `;
 
 const StyledHalfContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  width: 100%;
+  gap: 8px;
 `;
 
 const StyledSkillList = styled.ul`
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(5, 1fr);
-  grid-row-gap: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
   padding: 20px;
 `;
 
@@ -45,6 +46,14 @@ const StyledSkillListTitle = styled.p`
   text-transform: capitalize;
   font-weight: ${typography.fw600};
   text-align: center;
+
+  @media ${device.md}{
+    font-size: ${typography.fs4};
+  }
+
+  @media ${device.sm}{
+    font-size: ${typography.fs5};
+  }
 `;
 
 const StyledSkillItem = styled.li`
@@ -69,7 +78,7 @@ const StyledSkillWrapperTitle = styled.div`
 `;
 
 const StyledSkillProgress = styled.div`
-  min-width: 350px;
+  min-width: 100%;
   height: 7px;
   background: ${colors.jet};
   border: none;
@@ -83,21 +92,9 @@ const StyledSkillProgress = styled.div`
       rgba(180, 71, 0, 1) 74%,
       rgba(130, 51, 0, 1) 100%
     );
-    min-width: 60%;
+    max-width: 60%;
     height: 100%;
-    border-radius: 10px;
-  }
-
-  @media ${device.md} {
-    min-width: 320px;
-  }
-
-  @media ${device.sm}{
-    min-width: 240px;
-  }
-
-  @media ${device.xs} {
-    min-width: 200px;
+    border-radius: inherit;
   }
 `;
 
@@ -156,10 +153,10 @@ function About() {
           />
         </TwoColumsSection>
       </Section>
-      <Section title="Linguagems">
+      <Section title="Linguagens">
         <StyledBigContainer>
           <StyledHalfContainer>
-            <StyledSkillListTitle>linguagems de código</StyledSkillListTitle>
+            <StyledSkillListTitle>Linguagens de código</StyledSkillListTitle>
             <StyledSkillList>
               <StyledSkillItem>
                 <StyledSkillWrapperTitle>
@@ -209,7 +206,7 @@ function About() {
             </StyledSkillList>
           </StyledHalfContainer>
           <StyledHalfContainer>
-            <StyledSkillListTitle>linguagems de código</StyledSkillListTitle>
+            <StyledSkillListTitle>Linguagens de código</StyledSkillListTitle>
             <StyledSkillList>
               <StyledSkillItem>
                 <StyledSkillWrapperTitle>
