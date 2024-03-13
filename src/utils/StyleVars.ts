@@ -98,7 +98,7 @@ interface Breakpoints {
 }
 
 const size: Breakpoints = {
-  xs: '400px', // for small screen mobile
+  xs: '480px', // for small screen mobile
   sm: '768px', // for mobile screen
   md: '1020px', // for tablets
   lg: '1280px', // for laptops

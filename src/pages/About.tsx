@@ -8,17 +8,22 @@ import { BsDatabaseFillGear } from "react-icons/bs";
 import { TbMathFunction } from "react-icons/tb";
 import SectionItem from "../ui/SectionItem";
 import styled from "styled-components";
-import { colors, gradients, typography } from "../utils/StyleVars";
+import { colors, device, gradients, typography } from "../utils/StyleVars";
 
 const StyledBigContainer = styled.div`
   background: ${gradients.bgGradientJet};
-  padding: 40px;
+  padding: 25px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr;
-  grid-column-gap: 20px;
+  grid-column-gap: 10px;
   grid-row-gap: 0px;
   border-radius: 15px;
+
+  @media ${device.sm} {
+    grid-template-columns: repeat(1, 1fr);
+    grid-row-gap: 20px;
+  }
 `;
 
 const StyledHalfContainer = styled.div`
@@ -31,7 +36,6 @@ const StyledSkillList = styled.ul`
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(5, 1fr);
-  grid-column-gap: px;
   grid-row-gap: 20px;
   padding: 20px;
 `;
@@ -64,29 +68,36 @@ const StyledSkillWrapperTitle = styled.div`
   }
 `;
 
-const StyledSkillProgress = styled.progress`
-  -webkit-appearance: none;
-  appearance: none;
-  width: 100%;
+const StyledSkillProgress = styled.div`
+  min-width: 350px;
   height: 7px;
-  background: ${colors.jet}; /* Cor de fundo da barra de progresso */
+  background: ${colors.jet};
   border: none;
   border-radius: 10px;
-  color: ${colors.orange}; /* Cor de fundo da barra de progresso não preenchida */
 
-  &::-webkit-progress-bar {
-    color: ${colors.orange}; /* Cor de fundo da barra de progresso não preenchida */
+  .inside-bar {
+    background: rgb(255, 100, 0);
+    background: linear-gradient(
+      90deg,
+      rgba(255, 100, 0, 1) 32%,
+      rgba(180, 71, 0, 1) 74%,
+      rgba(130, 51, 0, 1) 100%
+    );
+    min-width: 60%;
+    height: 100%;
     border-radius: 10px;
   }
 
-  &::-webkit-progress-value {
-    color: ${colors.orange}; /* Cor da parte preenchida da barra de progresso */
-    border-radius: 10px;
+  @media ${device.md} {
+    min-width: 320px;
   }
 
-  &:-moz-progress-bar {
-    color: ${colors.orange}; /* Cor da parte preenchida da barra de progresso */
-    border-radius: 10px;
+  @media ${device.sm}{
+    min-width: 240px;
+  }
+
+  @media ${device.xs} {
+    min-width: 200px;
   }
 `;
 
@@ -98,28 +109,28 @@ function About() {
       <Section title={"Meu foco atual"}>
         <TwoColumsSection>
           <SectionItem
-            icon={<TbWorldUpload  />}
+            icon={<TbWorldUpload />}
             title={"Web designer e desenvolvimento"}
             text={
               "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex quam uptates, "
             }
           />
           <SectionItem
-            icon={<FaMobileScreenButton  />}
+            icon={<FaMobileScreenButton />}
             title={"Aplicativos móveis e jogos"}
             text={
               "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex quam uptates, "
             }
           />
           <SectionItem
-            icon={<TbMathFunction  />}
+            icon={<TbMathFunction />}
             title={"Algoritmos e soluções"}
             text={
-              "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex quam uptates. "
+              ". Ex quam uptates, Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex quam uptates. "
             }
           />
           <SectionItem
-            icon={<BsDatabaseFillGear  />}
+            icon={<BsDatabaseFillGear />}
             title={"Banco de dados"}
             text={
               "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex quam uptates, "
@@ -130,17 +141,17 @@ function About() {
       <Section title="Profissional com pessoal">
         <TwoColumsSection>
           <SectionItem
-            icon={<TbMathFunction  />}
+            icon={<TbMathFunction />}
             title={"Notions com dicas de javascript"}
             text={
               "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex quam uptates, "
             }
           />
           <SectionItem
-            icon={<BsDatabaseFillGear  />}
+            icon={<BsDatabaseFillGear />}
             title={"Participação em olimpiadas acadêmicas"}
             text={
-              "sit amet consectetur, adipisicing elit. Ex quam uptates. "
+              "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex quam uptates, Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex quam uptates. "
             }
           />
         </TwoColumsSection>
@@ -155,35 +166,45 @@ function About() {
                   <p>Javascript</p>
                   <p>90%</p>
                 </StyledSkillWrapperTitle>
-                <StyledSkillProgress max={100} value={80}></StyledSkillProgress>
+                <StyledSkillProgress>
+                  <div className="inside-bar"></div>
+                </StyledSkillProgress>
               </StyledSkillItem>
               <StyledSkillItem>
                 <StyledSkillWrapperTitle>
                   <p>Javascript</p>
                   <p>90%</p>
                 </StyledSkillWrapperTitle>
-                <StyledSkillProgress max={100} value={80}></StyledSkillProgress>
+                <StyledSkillProgress>
+                  <div className="inside-bar"></div>
+                </StyledSkillProgress>
               </StyledSkillItem>
               <StyledSkillItem>
                 <StyledSkillWrapperTitle>
                   <p>Javascript</p>
                   <p>90%</p>
                 </StyledSkillWrapperTitle>
-                <StyledSkillProgress max={100} value={80}></StyledSkillProgress>
+                <StyledSkillProgress>
+                  <div className="inside-bar"></div>
+                </StyledSkillProgress>
               </StyledSkillItem>
               <StyledSkillItem>
                 <StyledSkillWrapperTitle>
                   <p>Javascript</p>
                   <p>90%</p>
                 </StyledSkillWrapperTitle>
-                <StyledSkillProgress max={100} value={80}></StyledSkillProgress>
+                <StyledSkillProgress>
+                  <div className="inside-bar"></div>
+                </StyledSkillProgress>
               </StyledSkillItem>
               <StyledSkillItem>
                 <StyledSkillWrapperTitle>
                   <p>Javascript</p>
                   <p>90%</p>
                 </StyledSkillWrapperTitle>
-                <StyledSkillProgress max={100} value={80}></StyledSkillProgress>
+                <StyledSkillProgress>
+                  <div className="inside-bar"></div>
+                </StyledSkillProgress>
               </StyledSkillItem>
             </StyledSkillList>
           </StyledHalfContainer>
@@ -195,35 +216,45 @@ function About() {
                   <p>Javascript</p>
                   <p>90%</p>
                 </StyledSkillWrapperTitle>
-                <StyledSkillProgress max={100} value={80}></StyledSkillProgress>
+                <StyledSkillProgress>
+                  <div className="inside-bar"></div>
+                </StyledSkillProgress>
               </StyledSkillItem>
               <StyledSkillItem>
                 <StyledSkillWrapperTitle>
                   <p>Javascript</p>
                   <p>90%</p>
                 </StyledSkillWrapperTitle>
-                <StyledSkillProgress max={100} value={80}></StyledSkillProgress>
+                <StyledSkillProgress>
+                  <div className="inside-bar"></div>
+                </StyledSkillProgress>
               </StyledSkillItem>
               <StyledSkillItem>
                 <StyledSkillWrapperTitle>
                   <p>Javascript</p>
                   <p>90%</p>
                 </StyledSkillWrapperTitle>
-                <StyledSkillProgress max={100} value={80}></StyledSkillProgress>
+                <StyledSkillProgress>
+                  <div className="inside-bar"></div>
+                </StyledSkillProgress>
               </StyledSkillItem>
               <StyledSkillItem>
                 <StyledSkillWrapperTitle>
                   <p>Javascript</p>
                   <p>90%</p>
                 </StyledSkillWrapperTitle>
-                <StyledSkillProgress max={100} value={80}></StyledSkillProgress>
+                <StyledSkillProgress>
+                  <div className="inside-bar"></div>
+                </StyledSkillProgress>
               </StyledSkillItem>
               <StyledSkillItem>
                 <StyledSkillWrapperTitle>
                   <p>Javascript</p>
                   <p>90%</p>
                 </StyledSkillWrapperTitle>
-                <StyledSkillProgress max={100} value={80}></StyledSkillProgress>
+                <StyledSkillProgress>
+                  <div className="inside-bar"></div>
+                </StyledSkillProgress>
               </StyledSkillItem>
             </StyledSkillList>
           </StyledHalfContainer>

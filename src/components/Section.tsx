@@ -20,6 +20,7 @@ const StyledSectionTitle = styled.p`
   font-size: ${typography.fs1};
   font-weight: ${typography.fw600};
   padding-bottom: 10px;
+  margin-bottom: 8px;
 
   position: relative;
 
