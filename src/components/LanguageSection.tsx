@@ -9,7 +9,6 @@ const StyledBigContainer = styled.div`
   width: 100%;
   border-radius: 15px;
   padding: 20px;
-  gap: 30px;
 
   @media ${device.xs} {
     display: grid;
