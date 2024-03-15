@@ -8,8 +8,7 @@ import { BsDatabaseFillGear } from "react-icons/bs";
 import { TbMathFunction } from "react-icons/tb";
 import SectionItem from "../ui/SectionItem";
 import LanguageSection from "../components/LanguageSection";
-
-
+import Carousel from "../components/Carousel";
 
 function About() {
   return (
@@ -67,7 +66,10 @@ function About() {
         </TwoColumsSection>
       </Section>
       <Section title="Linguagens">
-        <LanguageSection/>
+        <LanguageSection />
+      </Section>
+      <Section title="Habilidades de desenvolvimento">
+        <Carousel />
       </Section>
     </>
   );
