@@ -55,10 +55,9 @@ const CarouselContainer = styled.div`
   border-radius: 15px;
   position: relative;
   width: 100%;
-  height: 200px;
+  height: 240px;
   perspective: 50%;
   transform-style: preserve-3d;
-
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr;
@@ -74,7 +73,7 @@ const CardContainer = styled.div`
     scaleY(calc(1 + var(--abs-offset) * -0.4))
     translateZ(calc(var(--abs-offset) * -30rem))
     translateX(calc(var(--direction) * -5rem));
-  /* filter: blur(calc(var(--abs-offset) * 1rem)); */
+   filter: grayscale(var(--active));
   transition: all 0.3s ease-out;
   justify-self: center;
 `;
@@ -142,11 +141,11 @@ export default function Carousel() {
         <CardContainer
           key={index}
           style={{
-            "--active": index === active ? 1 : 0,
+            "--active": index === active ? 0 : 1,
             "--offset": (active - index) / 3,
             "--direction": Math.sign(active - index),
             "--abs-offset": Math.abs(active - index) / 3,
-            "pointer-events": active === index ? "auto" : "none",
+            "pointerEvents": active === index ? "auto" : "none",
             opacity: Math.abs(active - index) >= MAX_VISIBILITY ? "0" : "1",
              display:
                Math.abs(active - index) > MAX_VISIBILITY ? "none" : "block",
