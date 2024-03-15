@@ -3,76 +3,6 @@ import styled from "styled-components";
 import { TiChevronLeftOutline, TiChevronRightOutline } from "react-icons/ti";
 import { colors, device, gradients } from "../utils/StyleVars";
 
-const CarouselContainer = styled.div`
-  background: ${gradients.bgGradientJet};
-  border-radius: 15px;
-  position: relative;
-  width: 100%;
-  height: 200px;
-  perspective: 50%;
-  transform-style: preserve-3d;
-
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 1fr;
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-  align-items: center;
-  padding: 40px;
-`;
-
-const CardContainer = styled.div`
-  position: absolute;
-  transform: rotateY(calc(var(--offset) * 60deg))
-    scaleY(calc(1 + var(--abs-offset) * -0.4))
-    translateZ(calc(var(--abs-offset) * -30rem))
-    translateX(calc(var(--direction) * -5rem));
-  /* filter: blur(calc(var(--abs-offset) * 1rem)); */
-  transition: all 0.3s ease-out;
-  justify-self: center;
-`;
-
-const Card = styled.div`
-  img {
-    width: 140px;
-    height: 140px;
-  }
-  transition: all 0.3s ease-out;
-
-  @media ${device.md}{
-    img{
-      width: 100px;
-    height: 100px;
-    }
-  }
-  @media ${device.sm}{
-    img{
-      width: 60px;
-    height: 60px;
-    }
-  }
-`;
-
-const NavButton = styled.button<{ direction: string }>`
-  color: ${colors.orange};
-  font-size: 5rem;
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  top: 50%;
-  z-index: 2;
-  cursor: pointer;
-  user-select: none;
-  background: unset;
-  border: unset;
-  ${({ direction }) =>
-    direction === "left"
-      ? "transform: translateX(0%) translateY(-50%);"
-      : "right: 0; transform: translateX(0%) translateY(-50%);"}
-`;
-
-const MAX_VISIBILITY = 3;
 const Skills = [
   {
     name: "javascript",
@@ -119,6 +49,78 @@ const Skills = [
     img: "https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg",
   },
 ];
+
+const CarouselContainer = styled.div`
+  background: ${gradients.bgGradientJet};
+  border-radius: 15px;
+  position: relative;
+  width: 100%;
+  height: 200px;
+  perspective: 50%;
+  transform-style: preserve-3d;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  align-items: center;
+  overflow: hidden;
+`;
+
+const CardContainer = styled.div`
+  position: absolute;
+  transform: rotateY(calc(var(--offset) * 60deg))
+    scaleY(calc(1 + var(--abs-offset) * -0.4))
+    translateZ(calc(var(--abs-offset) * -30rem))
+    translateX(calc(var(--direction) * -5rem));
+  /* filter: blur(calc(var(--abs-offset) * 1rem)); */
+  transition: all 0.3s ease-out;
+  justify-self: center;
+`;
+
+const Card = styled.div`
+  img {
+    width: 140px;
+    height: 140px;
+  }
+  transition: all 0.3s ease-out;
+
+  @media ${device.md} {
+    img {
+      width: 100px;
+      height: 100px;
+    }
+  }
+  @media ${device.sm} {
+    img {
+      width: 60px;
+      height: 60px;
+    }
+  }
+`;
+
+const NavButton = styled.button<{ direction: string }>`
+  color: ${colors.orange};
+  font-size: 5rem;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 50%;
+  z-index: 2;
+  cursor: pointer;
+  user-select: none;
+  background: unset;
+  border: unset;
+  ${({ direction }) =>
+    direction === "left"
+      ? "transform: translateX(0%) translateY(-50%);"
+      : "right: 0; transform: translateX(0%) translateY(-50%);"}
+`;
+
+const MAX_VISIBILITY = 2.8;
+
 const CARDS = Skills.length;
 
 export default function Carousel() {
@@ -136,25 +138,26 @@ export default function Carousel() {
           <TiChevronLeftOutline />
         </NavButton>
       )}
-        {Skills.map((skill, index) => (
-          <CardContainer
-            key={index}
-            style={{
-              "--active": index === active ? 1 : 0,
-              "--offset": (active - index) / 3,
-              "--direction": Math.sign(active - index),
-              "--abs-offset": Math.abs(active - index) / 3,
-              "pointer-events": active === index ? "auto" : "none",
-              opacity: Math.abs(active - index) >= MAX_VISIBILITY ? "0" : "1",
-              display:
-                Math.abs(active - index) > MAX_VISIBILITY ? "none" : "block",
-            }}
-          >
-            <Card>
-              <img src={skill.img} alt={skill.name} />
-            </Card>
-          </CardContainer>
-        ))}
+      {Skills.map((skill, index) => (
+        <CardContainer
+          key={index}
+          style={{
+            "--active": index === active ? 1 : 0,
+            "--offset": (active - index) / 3,
+            "--direction": Math.sign(active - index),
+            "--abs-offset": Math.abs(active - index) / 3,
+            "pointer-events": active === index ? "auto" : "none",
+            opacity: Math.abs(active - index) >= MAX_VISIBILITY ? "0" : "1",
+             display:
+               Math.abs(active - index) > MAX_VISIBILITY ? "none" : "block",
+            overflow: "hidden",
+          }}
+        >
+          <Card>
+            <img src={skill.img} alt={skill.name} />
+          </Card>
+        </CardContainer>
+      ))}
 
       {active < count - 1 && (
         <NavButton
