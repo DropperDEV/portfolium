@@ -1,10 +1,11 @@
 import styled from "styled-components";
 import TitleMain from "../ui/TitleMain";
-import { colors, typography } from "../utils/StyleVars";
+import { colors, device, typography } from "../utils/StyleVars";
 import ButtonNextRoute from "../ui/ButtonNextRoute";
 import ButtonContainer from "../ui/ButtonContainer";
 
 const StyledSectionProject = styled.section`
+margin-bottom: 25px;
   nav {
     margin-top: 30px;
     margin-bottom: 40px;
@@ -21,7 +22,11 @@ const StyledSectionProject = styled.section`
     color: ${colors.lightGray};
     cursor: pointer;
   }
-  margin-bottom: 25px;
+  @media ${device.xs}{
+    nav ul{
+      flex-direction: column;
+    }
+  }
 `;
 
 const StyledProjectList = styled.ul`
@@ -29,6 +34,13 @@ const StyledProjectList = styled.ul`
   grid-template-columns: repeat(3, 1fr);
   grid-column-gap: 30px;
   grid-row-gap: 40px;
+
+  @media ${device.sm}{
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media ${device.xs}{
+    grid-template-columns: repeat(1, 1fr);
+  }
 `;
 
 const StyledProjectItem = styled.li`
