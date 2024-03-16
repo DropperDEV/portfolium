@@ -3,9 +3,12 @@ import TitleMain from "../ui/TitleMain";
 import { colors, device, typography } from "../utils/StyleVars";
 import ButtonNextRoute from "../ui/ButtonNextRoute";
 import ButtonContainer from "../ui/ButtonContainer";
+import ProjectList from "../ui/ProjectList";
+import ProjectItem from "../components/ProjectItem";
+import { useState } from "react";
 
 const StyledSectionProject = styled.section`
-margin-bottom: 25px;
+  margin-bottom: 25px;
   nav {
     margin-top: 30px;
     margin-bottom: 40px;
@@ -18,183 +21,77 @@ margin-bottom: 25px;
     color: ${colors.lightGray70};
     font-size: ${typography.fs5};
   }
-  nav ul li:hover {
+  nav ul li button:hover {
     color: ${colors.lightGray};
     cursor: pointer;
   }
-  @media ${device.xs}{
-    nav ul{
+  @media ${device.xs} {
+    nav ul {
       flex-direction: column;
     }
   }
 `;
 
-const StyledProjectList = styled.ul`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-column-gap: 30px;
-  grid-row-gap: 40px;
-
-  @media ${device.sm}{
-    grid-template-columns: repeat(2, 1fr);
-  }
-  @media ${device.xs}{
-    grid-template-columns: repeat(1, 1fr);
-  }
-`;
-
-const StyledProjectItem = styled.li`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  img {
-    width: 100%;
-    border-radius: 15px;
-    margin-bottom: 20px;
-  }
-  p {
-    font-size: ${typography.fs5};
-    color: ${colors.lightGray70};
-  }
-
-  .title {
-    color: ${colors.white2};
-    font-weight: ${typography.fw400};
-    text-transform: capitalize;
-    line-height: 1.3;
-    margin-bottom: 3px;
-  }
-
-  .subTitle {
-    display: flex;
-    gap: 5px;
-  }
-  .link {
-    margin-top: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    gap: 6px;
-  }
-  a {
-    width: 100%;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background-color: hsla(240, 3%, 13%, 0.214);
-    margin: 0 5px;
-    padding: 2px 10px;
-    border-radius: 6px;
-    text-decoration: none;
-    color: ${colors.orange};
-    font-size: 17px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-
-  a:hover{
-    background-color: hsla(240, 3%, 13%, 0.581);
-  }
-`;
+const projects = [
+  {
+    mediaSrc: "\\p_fenixquiz.png",
+    name: "Quiz Fênix",
+    features: ["Web game", "Frontend"],
+    categorie: ["webgame", "games"],
+    techs: ["Html", "Css", "Git"],
+    ghLink: "https://dropperdev.github.io/fenixquiz/",
+    repositorieLink: "https://github.com/DropperDEV/fenixquiz",
+  },
+  {
+    mediaSrc: "\\p_lojafenix.png",
+    name: "Loja Fênix",
+    features: ["Website", "Frontend", "Design"],
+    categorie: ["website", "aplication"],
+    techs: ["Html", "Css", "Flexbox"],
+    ghLink: "https://dropperdev.github.io/projeto-html-col-gio/",
+    repositorieLink: "hhttps://github.com/DropperDEV/lojafenix",
+  },
+];
 
 function Projects() {
+  const [categorie, setCategorie] = useState<string>("all");
   return (
     <>
       <TitleMain text="Meus projetos" />
       <StyledSectionProject>
         <nav>
           <ul>
-            <li>Todos</li>
-            <li>Websites</li>
-            <li>Jogos</li>
-            <li>Aplicações</li>
+            <li>
+              <button onClick={() => setCategorie("all")}>Todos</button>
+            </li>
+            <li>
+              <button onClick={() => setCategorie("website")}>Websites</button>
+            </li>
+            <li>
+              <button onClick={() => setCategorie("games")}>Jogos</button>
+            </li>
+            <li>
+              <button onClick={() => setCategorie("aplications")}>
+                Aplicações
+              </button>
+            </li>
           </ul>
         </nav>
-        <StyledProjectList>
-          <StyledProjectItem>
-            <img src="\p_fenixquiz.png" alt="" />
-            <p className="title">Site muito brabo</p>
-            <div className="subTitle">
-              <p>Website</p>
-              <p>+</p>
-              <p>Frontend</p>
-            </div>
-            <div>
-              <p>Javascript</p>
-            </div>
-            <div className="link">
-              <a href="">Prévia</a>
-              <a href="">Github</a>
-            </div>
-          </StyledProjectItem>
-          <StyledProjectItem>
-            <img src="\p_lojafenix.png" alt="" />
-            <p className="title">Site muito brabo</p>
-            <div className="subTitle">
-              <p>Website</p>
-              <p>+</p>
-              <p>Frontend</p>
-            </div>
-            <div>
-              <p>Javascript</p>
-            </div>
-            <div className="link">
-              <a href="">Prévia</a>
-              <a href="">Github</a>
-            </div>
-          </StyledProjectItem>
-          <StyledProjectItem>
-            <img src="\p_lojafenix.png" alt="" />
-            <p className="title">Site muito brabo</p>
-            <div className="subTitle">
-              <p>Website</p>
-              <p>+</p>
-              <p>Frontend</p>
-            </div>
-            <div>
-              <p>Javascript</p>
-            </div>
-            <div className="link">
-              <a href="">Prévia</a>
-              <a href="">Github</a>
-            </div>
-          </StyledProjectItem>
-          <StyledProjectItem>
-            <img src="\p_lojafenix.png" alt="" />
-            <p className="title">Site muito brabo</p>
-            <div className="subTitle">
-              <p>Website</p>
-              <p>+</p>
-              <p>Frontend</p>
-            </div>
-            <div>
-              <p>Javascript</p>
-            </div>
-            <div className="link">
-              <a href="">Prévia</a>
-              <a href="">Github</a>
-            </div>
-          </StyledProjectItem>
-          <StyledProjectItem>
-            <img src="\p_lojafenix.png" alt="" />
-            <p className="title">Site muito brabo</p>
-            <div className="subTitle">
-              <p>Website</p>
-              <p>+</p>
-              <p>Frontend</p>
-            </div>
-            <div>
-              <p>Javascript</p>
-            </div>
-            <div className="link">
-              <a href="">Prévia</a>
-              <a href="">Github</a>
-            </div>
-          </StyledProjectItem>
-        </StyledProjectList>
       </StyledSectionProject>
+      <ProjectList>
+        
+        {projects.map((project, index) => (
+          <ProjectItem
+            mediaSrc={project.mediaSrc}
+            name={project.name}
+            features={project.features}
+            techs={project.techs}
+            ghLink={project.ghLink}
+            repositorieLink={project.repositorieLink}
+            key={index}
+          />
+        ))}
+      </ProjectList>
       <ButtonContainer>
         <ButtonNextRoute to="/certificates" />
       </ButtonContainer>

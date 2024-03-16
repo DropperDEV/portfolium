@@ -15,6 +15,7 @@ const ContainerMain = styled.main`
   box-shadow: ${shadows.shadow5};
   background-color: ${colors.eerieBlack2};
   padding: 30px;
+  padding-bottom: 50px;
   margin-bottom: 60px;
 
   @media ${device.lg} {
