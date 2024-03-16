@@ -10,6 +10,7 @@ const StyledProjectList = styled.ul`
   grid-template-columns: repeat(3, 1fr);
   grid-column-gap: 30px;
   grid-row-gap: 40px;
+  margin-bottom: 40px;
 
   @media ${device.sm} {
     grid-template-columns: repeat(2, 1fr);

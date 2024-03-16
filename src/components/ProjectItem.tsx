@@ -88,7 +88,7 @@ function ProjectItem({
         <p>
           {features.length > 1
             ? features.map((feature, index) =>
-                index < features.length - 1 ? `${feature} +` : feature
+                index < features.length - 1 ? `${feature} + ` : feature
               )
             : features}
         </p>

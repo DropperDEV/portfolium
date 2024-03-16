@@ -8,8 +8,7 @@ import ProjectList from "../ui/ProjectList";
 import ProjectItem from "../components/ProjectItem";
 import projects from "../service/projectsData.js";
 
-const StyledSectionProject = styled.section`
-  margin-bottom: 25px;
+const StyledSectionNav = styled.section`
   nav {
     margin-top: 30px;
     margin-bottom: 40px;
@@ -43,7 +42,7 @@ function Projects() {
   return (
     <>
       <TitleMain text="Meus projetos" />
-      <StyledSectionProject>
+      <StyledSectionNav>
         <nav>
           <ul>
             <li>
@@ -66,7 +65,7 @@ function Projects() {
             </li>
           </ul>
         </nav>
-      </StyledSectionProject>
+      </StyledSectionNav>
       <ProjectList>
         {filteredProjects.map((project, index) => (
           <ProjectItem
