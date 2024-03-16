@@ -15,7 +15,7 @@ const StyledNavigation = styled.nav`
   left: auto;
   right: 0;
   width: max-content;
-  border-radius: 0 0 0 20px;
+  border-radius: 0 20px;
   padding: 0 10px;
   background: hsla(240, 1%, 17%, 0.75);
   z-index: 5;

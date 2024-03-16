@@ -10,13 +10,8 @@ import SectionItem from "../ui/SectionItem";
 import LanguageSection from "../components/LanguageSection";
 import Carousel from "../components/Carousel";
 import ButtonNextRoute from "../ui/ButtonNextRoute";
-import styled from "styled-components";
+import ButtonContainer from "../ui/ButtonContainer";
 
-const StyledButtonContainer = styled.div`
-  display: flex;
-  justify-content: right;
-  align-items: right;
-`;
 function About() {
   return (
     <>
@@ -78,9 +73,9 @@ function About() {
       <Section title="Habilidades de desenvolvimento">
         <Carousel />
       </Section>
-      <StyledButtonContainer>
+      <ButtonContainer>
         <ButtonNextRoute to="/projects" />
-      </StyledButtonContainer>
+      </ButtonContainer>
     </>
   );
 }
