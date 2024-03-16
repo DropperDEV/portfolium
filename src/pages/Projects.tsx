@@ -49,12 +49,17 @@ const projects = [
     categorie: ["website", "aplication"],
     techs: ["Html", "Css", "Flexbox"],
     ghLink: "https://dropperdev.github.io/projeto-html-col-gio/",
-    repositorieLink: "hhttps://github.com/DropperDEV/lojafenix",
+    repositorieLink: "https://github.com/DropperDEV/lojafenix",
   },
 ];
 
 function Projects() {
-  const [categorie, setCategorie] = useState<string>("all");
+  const [selectedCategorie, setSelectedCategorie] = useState<string>("all");
+  
+  const filteredProjects = selectedCategorie === "all"
+    ? projects
+    : projects.filter(project => project.categorie.includes(selectedCategorie));
+
   return (
     <>
       <TitleMain text="Meus projetos" />
@@ -62,16 +67,20 @@ function Projects() {
         <nav>
           <ul>
             <li>
-              <button onClick={() => setCategorie("all")}>Todos</button>
+              <button onClick={() => setSelectedCategorie("all")}>Todos</button>
             </li>
             <li>
-              <button onClick={() => setCategorie("website")}>Websites</button>
+              <button onClick={() => setSelectedCategorie("website")}>
+                Websites
+              </button>
             </li>
             <li>
-              <button onClick={() => setCategorie("games")}>Jogos</button>
+              <button onClick={() => setSelectedCategorie("games")}>
+                Jogos
+              </button>
             </li>
             <li>
-              <button onClick={() => setCategorie("aplications")}>
+              <button onClick={() => setSelectedCategorie("aplication")}>
                 Aplicações
               </button>
             </li>
@@ -79,8 +88,7 @@ function Projects() {
         </nav>
       </StyledSectionProject>
       <ProjectList>
-        
-        {projects.map((project, index) => (
+        {filteredProjects.map((project, index) => (
           <ProjectItem
             mediaSrc={project.mediaSrc}
             name={project.name}
