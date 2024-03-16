@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styled from "styled-components";
 import TitleMain from "../ui/TitleMain";
 import { colors, device, typography } from "../utils/StyleVars";
@@ -5,7 +6,7 @@ import ButtonNextRoute from "../ui/ButtonNextRoute";
 import ButtonContainer from "../ui/ButtonContainer";
 import ProjectList from "../ui/ProjectList";
 import ProjectItem from "../components/ProjectItem";
-import { useState } from "react";
+import projects from "../service/projectsData.js";
 
 const StyledSectionProject = styled.section`
   margin-bottom: 25px;
@@ -32,30 +33,9 @@ const StyledSectionProject = styled.section`
   }
 `;
 
-const projects = [
-  {
-    mediaSrc: "\\p_fenixquiz.png",
-    name: "Quiz Fênix",
-    features: ["Web game", "Frontend"],
-    categorie: ["webgame", "games"],
-    techs: ["Html", "Css", "Git"],
-    ghLink: "https://dropperdev.github.io/fenixquiz/",
-    repositorieLink: "https://github.com/DropperDEV/fenixquiz",
-  },
-  {
-    mediaSrc: "\\p_lojafenix.png",
-    name: "Loja Fênix",
-    features: ["Website", "Frontend", "Design"],
-    categorie: ["website", "aplication"],
-    techs: ["Html", "Css", "Flexbox"],
-    ghLink: "https://dropperdev.github.io/projeto-html-col-gio/",
-    repositorieLink: "https://github.com/DropperDEV/lojafenix",
-  },
-];
-
 function Projects() {
-  const [selectedCategorie, setSelectedCategorie] = useState<string>("all");
-  
+  const [selectedCategorie, setSelectedCategorie] = useState("all");
+
   const filteredProjects = selectedCategorie === "all"
     ? projects
     : projects.filter(project => project.categorie.includes(selectedCategorie));
