@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { device, gradients, typography } from "../utils/StyleVars";
 import SkillItem from "../ui/SkillItem";
+import Skills from "../service/skillsData.js";
 
 const StyledBigContainer = styled.div`
   background: ${gradients.bgGradientJet};
@@ -47,26 +48,24 @@ const StyledSkillListTitle = styled.p`
 `;
 
 function LanguageSection() {
+  const skillDivide = Math.ceil(Skills.length / 2);
+
   return (
     <StyledBigContainer>
       <StyledHalfContainer>
         <StyledSkillListTitle>Linguagens de código</StyledSkillListTitle>
         <StyledSkillList>
-          <SkillItem />
-          <SkillItem />
-          <SkillItem />
-          <SkillItem />
-          <SkillItem />
+          {Skills.slice(0, skillDivide).map((skill, index) => (
+            <SkillItem key={index} name={skill.name} hability={skill.hability} />
+          ))}
         </StyledSkillList>
       </StyledHalfContainer>
       <StyledHalfContainer>
         <StyledSkillListTitle>Linguagens de código</StyledSkillListTitle>
         <StyledSkillList>
-          <SkillItem />
-          <SkillItem />
-          <SkillItem />
-          <SkillItem />
-          <SkillItem />
+          {Skills.slice(skillDivide).map((skill, index) => (
+            <SkillItem key={index} name={skill.name} hability={skill.hability} />
+          ))}
         </StyledSkillList>
       </StyledHalfContainer>
     </StyledBigContainer>

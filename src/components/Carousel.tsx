@@ -2,53 +2,8 @@ import { useState } from "react";
 import styled from "styled-components";
 import { TiChevronLeftOutline, TiChevronRightOutline } from "react-icons/ti";
 import { colors, device, gradients } from "../utils/StyleVars";
+import Skills from "../service/skillsData.js"
 
-const Skills = [
-  {
-    name: "javascript",
-    img: "https://upload.wikimedia.org/wikipedia/commons/9/99/Unofficial_JavaScript_logo_2.svg",
-  },
-  {
-    name: "css",
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/CSS3_logo.svg/800px-CSS3_logo.svg.png",
-  },
-  {
-    name: "html",
-    img: "https://upload.wikimedia.org/wikipedia/commons/3/38/HTML5_Badge.svg",
-  },
-  {
-    name: "react",
-    img: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
-  },
-  {
-    name: "typescript",
-    img: "https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg",
-  },
-  {
-    name: "java",
-    img: "https://static-00.iconduck.com/assets.00/java-icon-1511x2048-6ikx8301.png",
-  },
-  {
-    name: "c++",
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/1822px-ISO_C%2B%2B_Logo.svg.png",
-  },
-  {
-    name: "sql",
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Database-mysql.svg/744px-Database-mysql.svg.png",
-  },
-  {
-    name: "npm",
-    img: "https://www.svgrepo.com/show/439240/npm.svg",
-  },
-  {
-    name: "github",
-    img: "https://cdn-icons-png.flaticon.com/512/889/889192.png",
-  },
-  {
-    name: "figma",
-    img: "https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg",
-  },
-];
 
 const CarouselContainer = styled.div`
   background: ${gradients.bgGradientJet};

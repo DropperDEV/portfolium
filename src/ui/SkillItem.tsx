@@ -1,7 +1,10 @@
-
 import styled from "styled-components";
 import { colors, typography } from "../utils/StyleVars";
 
+interface ISkillItem {
+  name: string;
+  hability: string;
+}
 const StyledSkillItem = styled.li`
   display: flex;
   gap: 5px;
@@ -20,10 +23,11 @@ const StyledSkillWrapperTitle = styled.div`
     color: ${colors.lightGray};
     font-size: ${typography.fs7};
     font-weight: ${typography.fw300};
+    text-transform: capitalize;
   }
 `;
 
-const StyledSkillProgress = styled.div`
+const StyledSkillProgress = styled.div<{ $progress: string }>`
   min-width: 100%;
   height: 7px;
   background: ${colors.jet};
@@ -38,20 +42,20 @@ const StyledSkillProgress = styled.div`
       rgba(180, 71, 0, 1) 74%,
       rgba(130, 51, 0, 1) 100%
     );
-    max-width: 60%;
+    max-width: ${(props) => props.$progress}%; 
     height: 100%;
     border-radius: inherit;
   }
 `;
 
-function SkillItem() {
+function SkillItem({ name, hability }: ISkillItem) {
   return (
     <StyledSkillItem>
       <StyledSkillWrapperTitle>
-        <p>Javascript</p>
-        <p>90%</p>
+        <p>{name}</p>
+        <p>{hability}%</p>
       </StyledSkillWrapperTitle>
-      <StyledSkillProgress>
+      <StyledSkillProgress $progress={hability}>
         <div className="inside-bar"></div>
       </StyledSkillProgress>
     </StyledSkillItem>
