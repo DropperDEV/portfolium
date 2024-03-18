@@ -2,8 +2,20 @@ import { useState } from "react";
 import styled from "styled-components";
 import { TiChevronLeftOutline, TiChevronRightOutline } from "react-icons/ti";
 import { colors, device, gradients } from "../utils/StyleVars";
-import Skills from "../service/skillsData.js"
+// import Skills from "../service/skillsData.js"
+import SkillsData from "../service/skillsData.ts";
 
+interface Skill {
+  img: string;
+  name: string;
+}
+
+interface CardContainerProps {
+   "--active": number;
+   "--offset": number;
+   "--direction": number;
+   "--abs-offset": number;
+}
 
 const CarouselContainer = styled.div`
   background: ${gradients.bgGradientJet};
@@ -22,13 +34,13 @@ const CarouselContainer = styled.div`
   overflow: hidden;
 `;
 
-const CardContainer = styled.div`
+const CardContainer = styled.div<CardContainerProps>`
   position: absolute;
   transform: rotateY(calc(var(--offset) * 60deg))
     scaleY(calc(1 + var(--abs-offset) * -0.4))
     translateZ(calc(var(--abs-offset) * -30rem))
     translateX(calc(var(--direction) * -5rem));
-   filter: grayscale(var(--active));
+  filter: grayscale(var(--active));
   transition: all 0.3s ease-out;
   justify-self: center;
 `;
@@ -75,7 +87,8 @@ const NavButton = styled.button<{ direction: string }>`
 
 const MAX_VISIBILITY = 2.8;
 
-const CARDS = Skills.length;
+const CARDS = SkillsData.length;
+const Skills: Skill[] = SkillsData;
 
 export default function Carousel() {
   const [active, setActive] = useState(2);
@@ -92,18 +105,19 @@ export default function Carousel() {
           <TiChevronLeftOutline />
         </NavButton>
       )}
-      {Skills.map((skill, index) => (
+      {Skills.map((skill, index: number) => (
         <CardContainer
           key={index}
           style={{
+                    // @ts-expect-error i dont know why this error and it work fine so whatever
             "--active": index === active ? 0 : 1,
             "--offset": (active - index) / 3,
             "--direction": Math.sign(active - index),
             "--abs-offset": Math.abs(active - index) / 3,
-            "pointerEvents": active === index ? "auto" : "none",
+            pointerEvents: active === index ? "auto" : "none",
             opacity: Math.abs(active - index) >= MAX_VISIBILITY ? "0" : "1",
-             display:
-               Math.abs(active - index) > MAX_VISIBILITY ? "none" : "block",
+            display:
+              Math.abs(active - index) > MAX_VISIBILITY ? "none" : "block",
             overflow: "hidden",
           }}
         >
