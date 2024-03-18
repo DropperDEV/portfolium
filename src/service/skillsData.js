@@ -27,12 +27,12 @@ const Skills = [
   {
     name: "java",
     img: "https://static-00.iconduck.com/assets.00/java-icon-1511x2048-6ikx8301.png",
-    hability: "76",
+    hability: "60",
   },
   {
     name: "python",
     img: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Python.svg/2048px-Python.svg.png",
-    hability: "55"
+    hability: "42"
   },
   {
     name: "c++",
@@ -42,7 +42,7 @@ const Skills = [
   {
     name: "sql",
     img: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Database-mysql.svg/744px-Database-mysql.svg.png",
-    hability: "75"
+    hability: "55"
   },
   {
     name: "npm",

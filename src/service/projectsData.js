@@ -14,7 +14,7 @@ const projects = [
     features: ["Website", "Frontend", "Design"],
     categorie: ["website", "aplication"],
     techs: ["Html", "Css", "Flexbox"],
-    ghLink: "https://dropperdev.github.io/projeto-html-col-gio/",
+    ghLink: "https://dropperdev.github.io/lojafenix/",
     repositorieLink: "https://github.com/DropperDEV/lojafenix",
   },
   {
@@ -41,6 +41,8 @@ const projects = [
     categorie: ["website"],
     techs: ["Javascript", "React", "CSS"],
     repositorieLink: "https://github.com/DropperDEV/usepopcorn-repo",
+    ghLink: "https://dropperdev.github.io/usepopcorn/",
+    
   },
 ];
 
