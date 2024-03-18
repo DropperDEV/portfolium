@@ -348,7 +348,7 @@ function Sidebar() {
   return (
       <ContainerSide $active={active}>
         <MobileSideTitle>
-          <StyledImage src="/JamesPhoto.png" alt="James Costa" />
+          <StyledImage src="./JamesPhoto.png" alt="James Costa" />
           <ContainerTitle>
             <StyledTitle>James Costa</StyledTitle>
             <StyledSubTitle>Hello, World!</StyledSubTitle>

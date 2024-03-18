@@ -14,7 +14,7 @@ const StyledButton = styled(Link)`
   border-radius: 15px;
 `;
 function ButtonNextRoute({ to }: IButtonNextRoute) {
-  return <StyledButton to={to}>Proximo</StyledButton>;
+  return <StyledButton to={`/portfolium${to}`}>Proximo</StyledButton>;
 }
 
 export default ButtonNextRoute;

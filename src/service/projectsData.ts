@@ -1,6 +1,6 @@
 const projects = [
   {
-    mediaSrc: "\\p_fenixquiz.png",
+    mediaSrc: ".\\p_fenixquiz.png",
     name: "Quiz Fênix",
     features: ["Web game", "Frontend"],
     categorie: ["webgame", "games"],
@@ -9,7 +9,7 @@ const projects = [
     repositorieLink: "https://github.com/DropperDEV/fenixquiz",
   },
   {
-    mediaSrc: "\\p_lojafenix.png",
+    mediaSrc: ".\\p_lojafenix.png",
     name: "Loja Fênix",
     features: ["Website", "Frontend", "Design"],
     categorie: ["website", "aplication"],
@@ -18,7 +18,7 @@ const projects = [
     repositorieLink: "https://github.com/DropperDEV/lojafenix",
   },
   {
-    mediaSrc: "\\p_todolist.png",
+    mediaSrc: ".\\p_todolist.png",
     name: "Lista de tarefas em react",
     features: ["Website", "Frontend", "React"],
     categorie: ["website"],
@@ -27,7 +27,7 @@ const projects = [
     repositorieLink: "https://github.com/DropperDEV/todoList",
   },
   {
-    mediaSrc: "\\p_cpp.png",
+    mediaSrc: ".\\p_cpp.png",
     name: "Prep. Programação competitiva",
     features: ["Algoritmos", "Lógica"],
     categorie: ["aplication"],
@@ -35,7 +35,7 @@ const projects = [
     repositorieLink: "https://github.com/DropperDEV/COMPETITIVE-PROGRAMMING",
   },
   {
-    mediaSrc: "\\p_usepopcorn.png",
+    mediaSrc: ".\\p_usepopcorn.png",
     name: "Usepopcorn",
     features: ["React", "Hooks", "JS"],
     categorie: ["website"],
