@@ -398,7 +398,7 @@ Error generating stack: `+o.message+`
       z-index: -1;
     }
   }
-`;function Jy(){const[e,t]=R.useState(!1);return y.jsxs(Vy,{$active:e,children:[y.jsxs(Xy,{children:[y.jsx(Wy,{src:"/JamesPhoto.png",alt:"James Costa"}),y.jsxs(Hy,{children:[y.jsx(Qy,{children:"James Costa"}),y.jsx(Gy,{children:"Hello, World!"})]}),y.jsx(by,{onClick:()=>t(!e),children:y.jsx(Uy,{size:25})})]}),y.jsx(Gd,{$visible:!0,$active:e}),y.jsxs(Ky,{$active:e,children:[y.jsxs(La,{$active:e,children:[y.jsxs(za,{$active:e,children:[" ",y.jsx(By,{size:20,className:"icon-info"})]}),y.jsxs($a,{$active:e,children:[y.jsx(Na,{$active:e,children:"Idade"}),y.jsx(Ta,{$active:e,children:"18 anos de idade"})]})]}),y.jsxs(La,{$active:e,children:[y.jsx(za,{$active:e,children:y.jsx(Fy,{size:20,className:"icon-info"})}),y.jsxs($a,{$active:e,children:[y.jsx(Na,{$active:e,children:"Localização"}),y.jsx(Ta,{$active:e,children:"Fortaleza, Brasil"})]})]}),y.jsxs(La,{$active:e,children:[y.jsx(za,{$active:e,children:y.jsx(Ay,{size:20,className:"icon-info"})}),y.jsxs($a,{$active:e,children:[y.jsx(Na,{$active:e,children:"Personalidade"}),y.jsx(Ta,{$active:e,children:"INTP-T"})]})]})]}),y.jsx(Gd,{$visible:!1,$active:e}),y.jsxs(Yy,{$active:e,children:[y.jsx("a",{href:"https://www.linkedin.com/in/james-soares-costa/",target:"_blank",children:y.jsx(Oy,{size:18,className:"icon"})}),y.jsx("a",{href:"https://github.com/DropperDEV",target:"_blank",children:y.jsx(sm,{size:18,className:"icon"})})]})]})}function Po({text:e,to:t}){return y.jsx("li",{children:y.jsx(Ev,{to:t,children:e})})}const Zy=V.nav`
+`;function Jy(){const[e,t]=R.useState(!1);return y.jsxs(Vy,{$active:e,children:[y.jsxs(Xy,{children:[y.jsx(Wy,{src:"./JamesPhoto.png",alt:"James Costa"}),y.jsxs(Hy,{children:[y.jsx(Qy,{children:"James Costa"}),y.jsx(Gy,{children:"Hello, World!"})]}),y.jsx(by,{onClick:()=>t(!e),children:y.jsx(Uy,{size:25})})]}),y.jsx(Gd,{$visible:!0,$active:e}),y.jsxs(Ky,{$active:e,children:[y.jsxs(La,{$active:e,children:[y.jsxs(za,{$active:e,children:[" ",y.jsx(By,{size:20,className:"icon-info"})]}),y.jsxs($a,{$active:e,children:[y.jsx(Na,{$active:e,children:"Idade"}),y.jsx(Ta,{$active:e,children:"18 anos de idade"})]})]}),y.jsxs(La,{$active:e,children:[y.jsx(za,{$active:e,children:y.jsx(Fy,{size:20,className:"icon-info"})}),y.jsxs($a,{$active:e,children:[y.jsx(Na,{$active:e,children:"Localização"}),y.jsx(Ta,{$active:e,children:"Fortaleza, Brasil"})]})]}),y.jsxs(La,{$active:e,children:[y.jsx(za,{$active:e,children:y.jsx(Ay,{size:20,className:"icon-info"})}),y.jsxs($a,{$active:e,children:[y.jsx(Na,{$active:e,children:"Personalidade"}),y.jsx(Ta,{$active:e,children:"INTP-T"})]})]})]}),y.jsx(Gd,{$visible:!1,$active:e}),y.jsxs(Yy,{$active:e,children:[y.jsx("a",{href:"https://www.linkedin.com/in/james-soares-costa/",target:"_blank",children:y.jsx(Oy,{size:18,className:"icon"})}),y.jsx("a",{href:"https://github.com/DropperDEV",target:"_blank",children:y.jsx(sm,{size:18,className:"icon"})})]})]})}function Po({text:e,to:t}){return y.jsx("li",{children:y.jsx(Ev,{to:t,children:e})})}const Zy=V.nav`
   position: absolute;
   bottom: auto;
   top: 0;
@@ -431,12 +431,12 @@ Error generating stack: `+o.message+`
 
   a:hover,
   a:focus {
-    color: ${q.lightGray70};
-  }
-
-  a.active {
     color: ${q.orange};
   }
+
+  /* a.active {
+    color: ${q.orange};
+  } */
 
   @media ${re.md} {
     position: fixed;
@@ -464,7 +464,7 @@ Error generating stack: `+o.message+`
       font-size: 11px;
     }
   }
-`;function qy(){return y.jsx(Zy,{children:y.jsxs("ul",{children:[y.jsx(Po,{to:"/",text:"Sobre mim"}),y.jsx(Po,{to:"/projects",text:"Projetos"}),y.jsx(Po,{to:"/certificates",text:"Certificados"}),y.jsx(Po,{to:"/contact",text:"Contato"})]})})}const ex=V.main`
+`;function qy(){return y.jsx(Zy,{children:y.jsxs("ul",{children:[y.jsx(Po,{to:"/portfolium/",text:"Sobre mim"}),y.jsx(Po,{to:"/portfolium/projects",text:"Projetos"}),y.jsx(Po,{to:"/portfolium/certificates",text:"Certificados"}),y.jsx(Po,{to:"/portfolium/contact",text:"Contato"})]})})}const ex=V.main`
   position: relative;
   width: 900px;
   border-radius: 10px;
@@ -751,7 +751,7 @@ Error generating stack: `+o.message+`
   box-shadow: ${eo.shadow2};
   padding: 10px 20px;
   border-radius: 15px;
-`;function cm({to:e}){return y.jsx(_x,{to:e,children:"Proximo"})}const jx=V.div`
+`;function cm({to:e}){return y.jsx(_x,{to:`/portfolium${e}`,children:"Proximo"})}const jx=V.div`
   display: flex;
   justify-content: right;
   align-items: right;
@@ -827,7 +827,7 @@ Error generating stack: `+o.message+`
   .linkWrapper:hover {
     background-color: hsla(240, 3%, 13%, 0.581);
   }
-`;function Tx({mediaSrc:e,name:t,features:n,techs:r,ghLink:i,repositorieLink:o}){return y.jsxs(Nx,{children:[y.jsx("img",{src:e,alt:t}),y.jsx("p",{className:"title",children:t}),y.jsx("div",{className:"subTitle",children:y.jsx("p",{children:n.length>1?n.map((l,a)=>a<n.length-1?`${l} + `:l):n})}),y.jsx("div",{children:y.jsx("p",{children:r.map((l,a)=>a<r.length-1?`${l} | `:l)})}),y.jsxs("div",{className:"link",children:[i?y.jsxs("div",{className:"linkWrapper",children:[y.jsx(Iy,{})," ",y.jsx("a",{href:i,target:"_blank",children:"Previa"})]}):"",o?y.jsxs("div",{className:"linkWrapper",children:[y.jsx(sm,{}),y.jsx("a",{href:o,target:"_blank",children:"Repositorio"})]}):""]})]})}const nf=[{mediaSrc:"\\p_fenixquiz.png",name:"Quiz Fênix",features:["Web game","Frontend"],categorie:["webgame","games"],techs:["Html","Css","Git"],ghLink:"https://dropperdev.github.io/fenixquiz/",repositorieLink:"https://github.com/DropperDEV/fenixquiz"},{mediaSrc:"\\p_lojafenix.png",name:"Loja Fênix",features:["Website","Frontend","Design"],categorie:["website","aplication"],techs:["Html","Css","Flexbox"],ghLink:"https://dropperdev.github.io/lojafenix/",repositorieLink:"https://github.com/DropperDEV/lojafenix"},{mediaSrc:"\\p_todolist.png",name:"Lista de tarefas em react",features:["Website","Frontend","React"],categorie:["website"],techs:["Html","Styled-components","React"],ghLink:"https://dropperdev.github.io/todoList/",repositorieLink:"https://github.com/DropperDEV/todoList"},{mediaSrc:"\\p_cpp.png",name:"Prep. Programação competitiva",features:["Algoritmos","Lógica"],categorie:["aplication"],techs:["C++"],repositorieLink:"https://github.com/DropperDEV/COMPETITIVE-PROGRAMMING"},{mediaSrc:"\\p_usepopcorn.png",name:"Usepopcorn",features:["React","Hooks","JS"],categorie:["website"],techs:["Javascript","React","CSS"],repositorieLink:"https://github.com/DropperDEV/usepopcorn-repo",ghLink:"https://dropperdev.github.io/usepopcorn/"}],zx=V.section`
+`;function Tx({mediaSrc:e,name:t,features:n,techs:r,ghLink:i,repositorieLink:o}){return y.jsxs(Nx,{children:[y.jsx("img",{src:e,alt:t}),y.jsx("p",{className:"title",children:t}),y.jsx("div",{className:"subTitle",children:y.jsx("p",{children:n.length>1?n.map((l,a)=>a<n.length-1?`${l} + `:l):n})}),y.jsx("div",{children:y.jsx("p",{children:r.map((l,a)=>a<r.length-1?`${l} | `:l)})}),y.jsxs("div",{className:"link",children:[i?y.jsxs("div",{className:"linkWrapper",children:[y.jsx(Iy,{})," ",y.jsx("a",{href:i,target:"_blank",children:"Previa"})]}):"",o?y.jsxs("div",{className:"linkWrapper",children:[y.jsx(sm,{}),y.jsx("a",{href:o,target:"_blank",children:"Repositorio"})]}):""]})]})}const nf=[{mediaSrc:".\\p_fenixquiz.png",name:"Quiz Fênix",features:["Web game","Frontend"],categorie:["webgame","games"],techs:["Html","Css","Git"],ghLink:"https://dropperdev.github.io/fenixquiz/",repositorieLink:"https://github.com/DropperDEV/fenixquiz"},{mediaSrc:".\\p_lojafenix.png",name:"Loja Fênix",features:["Website","Frontend","Design"],categorie:["website","aplication"],techs:["Html","Css","Flexbox"],ghLink:"https://dropperdev.github.io/lojafenix/",repositorieLink:"https://github.com/DropperDEV/lojafenix"},{mediaSrc:".\\p_todolist.png",name:"Lista de tarefas em react",features:["Website","Frontend","React"],categorie:["website"],techs:["Html","Styled-components","React"],ghLink:"https://dropperdev.github.io/todoList/",repositorieLink:"https://github.com/DropperDEV/todoList"},{mediaSrc:".\\p_cpp.png",name:"Prep. Programação competitiva",features:["Algoritmos","Lógica"],categorie:["aplication"],techs:["C++"],repositorieLink:"https://github.com/DropperDEV/COMPETITIVE-PROGRAMMING"},{mediaSrc:".\\p_usepopcorn.png",name:"Usepopcorn",features:["React","Hooks","JS"],categorie:["website"],techs:["Javascript","React","CSS"],repositorieLink:"https://github.com/DropperDEV/usepopcorn-repo",ghLink:"https://dropperdev.github.io/usepopcorn/"}],zx=V.section`
   nav {
     margin-top: 30px;
     margin-bottom: 40px;
@@ -849,4 +849,4 @@ Error generating stack: `+o.message+`
       flex-direction: column;
     }
   }
-`;function Dx(){const[e,t]=R.useState("all"),n=e==="all"?nf:nf.filter(r=>r.categorie.includes(e));return y.jsxs(y.Fragment,{children:[y.jsx(um,{text:"Meus projetos"}),y.jsx(zx,{children:y.jsx("nav",{children:y.jsxs("ul",{children:[y.jsx("li",{children:y.jsx("button",{onClick:()=>t("all"),children:"Todos"})}),y.jsx("li",{children:y.jsx("button",{onClick:()=>t("website"),children:"Websites"})}),y.jsx("li",{children:y.jsx("button",{onClick:()=>t("games"),children:"Jogos"})}),y.jsx("li",{children:y.jsx("button",{onClick:()=>t("aplication"),children:"Aplicações"})})]})})}),y.jsx($x,{children:n.map((r,i)=>y.jsx(Tx,{mediaSrc:r.mediaSrc,name:r.name,features:r.features,techs:r.techs,ghLink:r.ghLink,repositorieLink:r.repositorieLink},i))}),y.jsx(dm,{children:y.jsx(cm,{to:"/certificates"})})]})}function Mx(){return y.jsx("div",{children:"Certificates"})}function Ox(){return y.jsx("div",{children:"Contact"})}const Ix=dv([{element:y.jsx(tx,{}),errorElement:y.jsx(_o,{}),children:[{path:"/",element:y.jsx(Rx,{})},{path:"/projects",element:y.jsx(Dx,{}),errorElement:y.jsx(_o,{})},{path:"/certificates",element:y.jsx(Mx,{}),errorElement:y.jsx(_o,{})},{path:"/contact",element:y.jsx(Ox,{}),errorElement:y.jsx(_o,{})}]}]);function Fx(){return y.jsx(xv,{router:Ix})}Da.createRoot(document.getElementById("root")).render(y.jsx(et.StrictMode,{children:y.jsx(Fx,{})}));
+`;function Dx(){const[e,t]=R.useState("all"),n=e==="all"?nf:nf.filter(r=>r.categorie.includes(e));return y.jsxs(y.Fragment,{children:[y.jsx(um,{text:"Meus projetos"}),y.jsx(zx,{children:y.jsx("nav",{children:y.jsxs("ul",{children:[y.jsx("li",{children:y.jsx("button",{onClick:()=>t("all"),children:"Todos"})}),y.jsx("li",{children:y.jsx("button",{onClick:()=>t("website"),children:"Websites"})}),y.jsx("li",{children:y.jsx("button",{onClick:()=>t("games"),children:"Jogos"})}),y.jsx("li",{children:y.jsx("button",{onClick:()=>t("aplication"),children:"Aplicações"})})]})})}),y.jsx($x,{children:n.map((r,i)=>y.jsx(Tx,{mediaSrc:r.mediaSrc,name:r.name,features:r.features,techs:r.techs,ghLink:r.ghLink,repositorieLink:r.repositorieLink},i))}),y.jsx(dm,{children:y.jsx(cm,{to:"/certificates"})})]})}function Mx(){return y.jsx("div",{children:"Certificates"})}function Ox(){return y.jsx("div",{children:"Contact"})}const Ix=dv([{element:y.jsx(tx,{}),errorElement:y.jsx(_o,{}),children:[{path:"/portfolium/",element:y.jsx(Rx,{})},{path:"/portfolium/projects",element:y.jsx(Dx,{}),errorElement:y.jsx(_o,{})},{path:"/portfolium/certificates",element:y.jsx(Mx,{}),errorElement:y.jsx(_o,{})},{path:"/portfolium/contact",element:y.jsx(Ox,{}),errorElement:y.jsx(_o,{})}]}]);function Fx(){return y.jsx(xv,{router:Ix})}Da.createRoot(document.getElementById("root")).render(y.jsx(et.StrictMode,{children:y.jsx(Fx,{})}));
