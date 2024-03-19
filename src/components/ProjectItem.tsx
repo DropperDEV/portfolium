@@ -13,9 +13,9 @@ interface IProjectItem {
 }
 const StyledProjectItem = styled.li`
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
+  height: 100%;
   img {
     width: 100%;
     border-radius: 15px;
@@ -34,10 +34,12 @@ const StyledProjectItem = styled.li`
     margin-bottom: 3px;
   }
 
-  .subTitle {
+  .subTitle p {
     display: flex;
     gap: 5px;
+    text-transform: capitalize;
   }
+
   .link {
     margin-top: 15px;
     display: flex;
@@ -47,7 +49,7 @@ const StyledProjectItem = styled.li`
     width: 100%;
     gap: 6px;
   }
-  .linkWrapper {
+  a {
     width: 100%;
     display: inline-flex;
     gap: 8px;
@@ -63,11 +65,11 @@ const StyledProjectItem = styled.li`
     transition: background-color 0.3s ease, color 0.3s ease;
   }
 
-  .linkWrapper * {
+  a{
     color: ${colors.orange};
   }
 
-  .linkWrapper:hover {
+  a:hover {
     background-color: hsla(240, 3%, 13%, 0.581);
   }
 `;
@@ -93,7 +95,7 @@ function ProjectItem({
             : features}
         </p>
       </div>
-      <div>
+      <div className="tech">
         <p>
           {techs.map((tech, index) =>
             index < techs.length - 1 ? `${tech} | ` : tech
@@ -102,22 +104,17 @@ function ProjectItem({
       </div>
       <div className="link">
         {ghLink ? (
-          <div className="linkWrapper">
-            <IoEyeOutline />{" "}
-            <a href={ghLink} target="_blank">
-              Previa
-            </a>
-          </div>
+          <a href={ghLink} target="_blank">
+            <IoEyeOutline /> Previa
+          </a>
         ) : (
           ""
         )}
         {repositorieLink ? (
-          <div className="linkWrapper">
+          <a href={repositorieLink} target="_blank">
             <FaGithub />
-            <a href={repositorieLink} target="_blank">
-              Repositorio
-            </a>
-          </div>
+            Repositorio
+          </a>
         ) : (
           ""
         )}
