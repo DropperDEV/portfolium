@@ -1,4 +1,4 @@
-import Section from "../components/Section";
+import Section from "../ui/Section";
 import TextBox from "../components/TextBox";
 import TitleMain from "../ui/TitleMain";
 import TwoColumsSection from "../ui/TwoColumsSection";

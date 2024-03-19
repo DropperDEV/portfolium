@@ -3,7 +3,7 @@ import { colors, transitions, typography } from "../utils/StyleVars";
 import styled from "styled-components";
 
 interface ISection {
-  title: string;
+  title?: string;
   children: any;
 }
 
