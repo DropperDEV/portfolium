@@ -14,21 +14,21 @@ const router = createBrowserRouter([
 
     children: [
       {
-        path: "/portfolium/",
+        path: "/",
         element: <About />,
       },
       {
-        path: "/portfolium/projects",
+        path: "/projects",
         element: <Projects />,
         errorElement: <ErrorPage />,
       },
       {
-        path: "/portfolium/certificates",
+        path: "/certificates",
         element: <Certificates />,
         errorElement: <ErrorPage />,
       },
       {
-        path: "/portfolium/contact",
+        path: "/contact",
         element: <Contact />,
         errorElement: <ErrorPage />,
       },

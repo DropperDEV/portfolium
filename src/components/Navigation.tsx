@@ -79,10 +79,10 @@ export default function Navigation() {
   return (
     <StyledNavigation>
       <ul>
-        <LinkItem to="/portfolium/" text="Sobre mim" />
-        <LinkItem to="/portfolium/projects" text="Projetos" />
-        <LinkItem to="/portfolium/certificates" text="Certificados" />
-        <LinkItem to="/portfolium/contact" text="Contato" />
+        <LinkItem to="/" text="Sobre mim" />
+        <LinkItem to="/projects" text="Projetos" />
+        <LinkItem to="/certificates" text="Certificados" />
+        <LinkItem to="/contact" text="Contato" />
       </ul>
     </StyledNavigation>
   );
