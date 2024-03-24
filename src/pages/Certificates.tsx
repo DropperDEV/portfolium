@@ -2,6 +2,8 @@ import styled from "styled-components";
 import TitleMain from "../ui/TitleMain";
 import { PiMonitorBold } from "react-icons/pi";
 import { colors, device, shadows, typography } from "../utils/StyleVars";
+import certificates from "../service/certificatesData";
+import CertificateItem from "../components/CertificateItem";
 
 const StyledCertificateSection = styled.section`
   display: flex;
@@ -38,43 +40,11 @@ const ContainerIconItem = styled.div`
   }
 `;
 
-const StyledItemContainer = styled.li`
-  position: relative;
-  &:not(:last-child)::before {
-    content: "";
-    position: absolute;
-    top: -35px;
-    left: -30px;
-    width: 1px;
-    height: calc(100% + 50px);
-    background: black;
-  }
-
-  &:after {
-    content: "";
-    position: absolute;
-    top: 5px;
-    left: -33px;
-    height: 6px;
-    width: 6px;
-    background: ${colors.orange};
-    border-radius: 50%;
-    box-shadow: 0 0 0 4px ${colors.jet};
-  }
-
-  .fromWhere {
-    color: ${colors.lightGray70};
-    margin-top: 8px;
-    font-weight: ${colors.fw300};
-    line-height: 1.6;
-  }
-`;
-
 const StyledListCertificate = styled.ul`
   font-size: ${typography.fs6};
   margin-left: 52px;
 
-  @media ${device.xs}{
+  @media ${device.xs} {
     margin-left: 17%;
   }
 
@@ -85,44 +55,6 @@ const StyledListCertificate = styled.ul`
   }
 `;
 
-const StyledCertificateContainer = styled.div`
-  position: relative;
-  display: inline-block;
-  padding: 5px;
-  border: 10px solid black;
-  box-sizing: border-box;
-
-  img {
-    display: block;
-    width: 220px;
-    height: auto;
-  }
-
-  @media ${device.xs}{
-    img {
-    
-    width: 140px;
-  }
-  }
-
-  &:hover img {
-    transform: scale(1.05);
-    cursor: zoom-in;
-    transition: transform 0.5s ease;
-  }
-
-  &:hover::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border: 1px solid #000;
-    pointer-events: none;
-    box-sizing: border-box;
-  }
-`;
 function Certificates() {
   return (
     <>
@@ -135,39 +67,14 @@ function Certificates() {
           <h3>Competências Técnicas</h3>
         </StyledWrapperCertificateTitle>
         <StyledListCertificate>
-          <StyledItemContainer>
-            <h4>Formação React Developer</h4>
-            <p className="fromWhere">DIO - Digital Innovation One</p>
-            <StyledCertificateContainer>
-              <img
-                src="./c_freactdeveloper.png"
-                alt="Formação React Developer"
-                onClick={() => window.open("./c_freactdeveloper.png")}
-              />
-            </StyledCertificateContainer>
-          </StyledItemContainer>
-          <StyledItemContainer>
-            <h4>Formação React Developer</h4>
-            <p className="fromWhere">DIO - Digital Innovation One</p>
-            <StyledCertificateContainer>
-              <img
-                src="./c_freactdeveloper.png"
-                alt="Formação React Developer"
-                onClick={() => window.open("./c_freactdeveloper.png")}
-              />
-            </StyledCertificateContainer>
-          </StyledItemContainer>
-          <StyledItemContainer>
-            <h4>Formação React Developer</h4>
-            <p className="fromWhere">DIO - Digital Innovation One</p>
-            <StyledCertificateContainer>
-              <img
-                src="./c_freactdeveloper.png"
-                alt="Formação React Developer"
-                onClick={() => window.open("./c_freactdeveloper.png")}
-              />
-            </StyledCertificateContainer>
-          </StyledItemContainer>
+          {certificates.map((certificate, index) => (
+            <CertificateItem
+              key={index}
+              title={certificate.title}
+              imgSrc={certificate.imgSrc}
+              institution={certificate.institution}
+            />
+          ))}
         </StyledListCertificate>
       </StyledCertificateSection>
     </>
