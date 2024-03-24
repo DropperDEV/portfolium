@@ -1,14 +1,14 @@
 import styled from "styled-components";
 import TitleMain from "../ui/TitleMain";
 import { PiMonitorBold } from "react-icons/pi";
-import { colors, shadows, typography } from "../utils/StyleVars";
+import { colors, device, shadows, typography } from "../utils/StyleVars";
 
 const StyledCertificateSection = styled.section`
   display: flex;
   flex-direction: column;
   margin-top: 5rem;
-  justify-content: flex-start; /* Change this */
-  align-items: flex-start; /* Change this */
+  justify-content: flex-start;
+  align-items: flex-start;
 `;
 const StyledWrapperCertificateTitle = styled.div`
   display: flex;
@@ -74,6 +74,10 @@ const StyledListCertificate = styled.ul`
   font-size: ${typography.fs6};
   margin-left: 52px;
 
+  @media ${device.xs}{
+    margin-left: 17%;
+  }
+
   span {
     color: ${colors.orange};
     font-weight: ${typography.fw400};
@@ -92,6 +96,13 @@ const StyledCertificateContainer = styled.div`
     display: block;
     width: 220px;
     height: auto;
+  }
+
+  @media ${device.xs}{
+    img {
+    
+    width: 140px;
+  }
   }
 
   &:hover img {
