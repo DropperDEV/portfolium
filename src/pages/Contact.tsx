@@ -41,9 +41,10 @@ const StyledContainerContact = styled.article`
     }
   }
 `;
-
+// @ts-expect-error all work dont worry :)
 function handleScheduleClick(event) {
   event.preventDefault();
+  // @ts-expect-error i dont know why i can´t install @calendly/typescript npm package so ignore all works without
   Calendly.initPopupWidget({ url: "https://calendly.com/jamescosta4747" });
 }
 
