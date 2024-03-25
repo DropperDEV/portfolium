@@ -40,9 +40,26 @@ const projects = [
     features: ["React", "Hooks", "JS"],
     categorie: ["website"],
     techs: ["Javascript", "React", "CSS"],
-    repositorieLink: "https://github.com/DropperDEV/usepopcorn-repo",
+    repositorieLink: "https://github.com/DropperDEV/usepopcorn",
     ghLink: "https://dropperdev.github.io/usepopcorn/",
-    
+  },
+  {
+    mediaSrc: ".\\p_asteroids.png",
+    name: "Asteroids - Feprocic 2023",
+    features: ["GDevelop", "Low Code"],
+    categorie: ["games"],
+    techs: ["GDevelop", "Abstração", "JS"],
+    repositorieLink: "https://github.com/DropperDEV/asteroids-web",
+    ghLink: "https://dropperdev.github.io/asteroids-web/",
+  },
+  {
+    mediaSrc: ".\\p_expresstruck.png",
+    name: "Express Truck - Projeto Final EP",
+    features: ["Fullstack", "Banco de Dados"],
+    categorie: ["website"],
+    techs: ["React", "TailwindCSS", "Supabase"],
+    repositorieLink: "https://github.com/DropperDEV/express-truck",
+    ghLink: "https://dropperdev.github.io/express-truck/",
   },
 ];
 
