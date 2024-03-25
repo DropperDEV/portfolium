@@ -4,6 +4,8 @@ import { PiMonitorBold } from "react-icons/pi";
 import { colors, device, shadows, typography } from "../utils/StyleVars";
 import certificates from "../service/certificatesData";
 import CertificateItem from "../components/CertificateItem";
+import ButtonContainer from "../ui/ButtonContainer";
+import ButtonNextRoute from "../ui/ButtonNextRoute";
 
 const StyledCertificateSection = styled.section`
   display: flex;
@@ -77,6 +79,9 @@ function Certificates() {
           ))}
         </StyledListCertificate>
       </StyledCertificateSection>
+      <ButtonContainer>
+        <ButtonNextRoute to="/contact" />
+      </ButtonContainer>
     </>
   );
 }
