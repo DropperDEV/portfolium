@@ -23,28 +23,28 @@ function About() {
             icon={<TbWorldUpload />}
             title={"Web designer e desenvolvimento"}
             text={
-              "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex quam uptates, "
+              "Criei interfaces interativas com o usuário, e responsivas."
             }
           />
           <SectionItem
             icon={<FaMobileScreenButton />}
             title={"Aplicativos móveis e jogos"}
             text={
-              "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex quam uptates, "
+              "Fiz um jogo em low code na plantaforma GDevelop, desenvolvendo minha abstração."
             }
           />
           <SectionItem
             icon={<TbMathFunction />}
             title={"Algoritmos e soluções"}
             text={
-              ". Ex quam uptates, Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex quam uptates. "
+              "Estudei por muito tempo estrutura de dados, algoritmos com a linguagem c++."
             }
           />
           <SectionItem
             icon={<BsDatabaseFillGear />}
             title={"Banco de dados"}
             text={
-              "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex quam uptates, "
+              "No colégio criei programas em python de CRUD, com MySQL e PhpAdmin"
             }
           />
         </TwoColumsSection>
@@ -55,14 +55,14 @@ function About() {
             icon={<TbMathFunction />}
             title={"Notions com dicas de javascript"}
             text={
-              "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex quam uptates, "
+              "Estou escrevendo um notion com tudo que é mais importante no javascript para web"
             }
           />
           <SectionItem
             icon={<BsDatabaseFillGear />}
             title={"Participação em olimpiadas acadêmicas"}
             text={
-              "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex quam uptates, Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex quam uptates. "
+              "Participei de diversas olimpiadas, trazendo resultado para a escola com medalhas. Minha principal atuação foi na OBBiotec"
             }
           />
         </TwoColumsSection>
