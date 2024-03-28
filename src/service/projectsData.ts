@@ -1,7 +1,7 @@
 const projects = [
   {
     mediaSrc: ".\\p_fenixquiz.png",
-    name: "Quiz Fênix",
+    name: "Quiz Fênix - Projeto começo Html",
     features: ["Web game", "Frontend"],
     categorie: ["webgame", "games"],
     techs: ["Html", "Css", "Git"],
@@ -10,7 +10,7 @@ const projects = [
   },
   {
     mediaSrc: ".\\p_lojafenix.png",
-    name: "Loja Fênix",
+    name: "Loja Fênix - Projeto final Html",
     features: ["Website", "Frontend", "Design"],
     categorie: ["website", "aplication"],
     techs: ["Html", "Css", "Flexbox"],
@@ -36,7 +36,7 @@ const projects = [
   },
   {
     mediaSrc: ".\\p_usepopcorn.png",
-    name: "Usepopcorn",
+    name: "Usepopcorn - Projeto curso gringo",
     features: ["React", "Hooks", "JS"],
     categorie: ["website"],
     techs: ["Javascript", "React", "CSS"],
@@ -54,12 +54,21 @@ const projects = [
   },
   {
     mediaSrc: ".\\p_expresstruck.png",
-    name: "Express Truck - Projeto Final EP",
+    name: "Express Truck - Projeto começo React",
     features: ["Fullstack", "Banco de Dados"],
     categorie: ["website"],
     techs: ["React", "TailwindCSS", "Supabase"],
     repositorieLink: "https://github.com/DropperDEV/express-truck",
     ghLink: "https://dropperdev.github.io/express-truck/",
+  },
+  {
+    mediaSrc: ".\\p_mathon.png",
+    name: "Math On - Projeto Começo Javascript",
+    features: [ "Javascript", "TailwindCSS"],
+    categorie: ["website", "aplication"],
+    techs: ["JS", "TailwindCSS"],
+    repositorieLink: "https://github.com/DropperDEV/proj-mathon-pgweb",
+    ghLink: "https://dropperdev.github.io/proj-mathon-pgweb/dist/index.html",
   },
 ];
 
