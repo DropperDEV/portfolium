@@ -4,7 +4,7 @@ interface ICertificates {
   institution: string;
 }
 
-const certificates: ICertificates[] = [
+export const TechCertificates: ICertificates[] = [
   {
     title: "Formação React Developer",
     imgSrc: "https://hermes.dio.me/certificates/cover/ITMC2TZB.jpg",
@@ -22,4 +22,22 @@ const certificates: ICertificates[] = [
   },
 ];
 
-export default certificates;
+export const OlympiadCertificates: ICertificates[] = [
+  {
+    title: "Medalha futuro cientista",
+    imgSrc: "./cert_obbiotec.png",
+    institution: "2ª edição da Olimpíada Brasileira de Biotecnologia – OBBiotec 2023",
+  },
+  {
+    title: "Medalha bronze",
+    imgSrc: "./cert_obg.png",
+    institution: "8ª edição da Olimpíada Brasileira de Geografia – OBG 2023",
+  },
+  {
+    title: "Participação Seguidor de linha",
+    imgSrc: "./cert_arduinoday.png",
+    institution: "Evento Arduino Day 2023 - 25 de Março IFCE",
+  },
+];
+
+

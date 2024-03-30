@@ -2,7 +2,8 @@ import styled from "styled-components";
 import TitleMain from "../ui/TitleMain";
 import { PiMonitorBold } from "react-icons/pi";
 import { colors, device, shadows, typography } from "../utils/StyleVars";
-import certificates from "../service/certificatesData";
+import {TechCertificates} from "../service/certificatesData";
+import {OlympiadCertificates} from "../service/certificatesData";
 import CertificateItem from "../components/CertificateItem";
 import ButtonContainer from "../ui/ButtonContainer";
 import ButtonNextRoute from "../ui/ButtonNextRoute";
@@ -69,7 +70,25 @@ function Certificates() {
           <h3>Competências Técnicas</h3>
         </StyledWrapperCertificateTitle>
         <StyledListCertificate>
-          {certificates.map((certificate, index) => (
+          {TechCertificates.map((certificate, index) => (
+            <CertificateItem
+              key={index}
+              title={certificate.title}
+              imgSrc={certificate.imgSrc}
+              institution={certificate.institution}
+            />
+          ))}
+        </StyledListCertificate>
+      </StyledCertificateSection>
+      <StyledCertificateSection>
+        <StyledWrapperCertificateTitle>
+          <ContainerIconItem>
+            <PiMonitorBold size={20} className="icon" />
+          </ContainerIconItem>
+          <h3>Resultados Em Olimpíadas</h3>
+        </StyledWrapperCertificateTitle>
+        <StyledListCertificate>
+          {OlympiadCertificates.map((certificate, index) => (
             <CertificateItem
               key={index}
               title={certificate.title}
